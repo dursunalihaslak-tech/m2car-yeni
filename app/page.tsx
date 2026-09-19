@@ -254,13 +254,14 @@ export default function Home() {
                   </div>
                 </div>
 
+                {/* ALIŞ TARİHİ */}
                 <div className="reservation-field">
                   <label className="reservation-label">
                     Alış Tarihi ve Saati
                   </label>
 
-                  <div className="flex items-center gap-[10px]">
-                    <div className="flex min-w-0 flex-1 items-center gap-[7px]">
+                  <div className="flex items-center gap-[9px]">
+                    <div className="flex min-w-0 flex-1 items-center gap-[8px]">
                       <CalendarSmallIcon />
 
                       <input
@@ -270,31 +271,32 @@ export default function Home() {
                         onChange={(e) =>
                           handlePickupDateChange(e.target.value)
                         }
-                        className="min-w-0 w-full bg-transparent text-[11px] font-bold text-[#514A46] outline-none"
+                        className="date-time-input min-w-0 w-full bg-transparent text-[13px] font-extrabold tracking-[-0.2px] text-[#3D3835] outline-none sm:text-[14px]"
                       />
                     </div>
 
-                    <div className="h-[26px] w-px bg-[#EAE3DE]" />
+                    <div className="h-[29px] w-px shrink-0 bg-[#EAE3DE]" />
 
-                    <div className="flex w-[82px] items-center gap-[6px]">
+                    <div className="flex w-[88px] shrink-0 items-center gap-[7px]">
                       <ClockIcon />
 
                       <input
                         type="time"
                         defaultValue="10:00"
-                        className="min-w-0 w-full bg-transparent text-[11px] font-bold text-[#514A46] outline-none"
+                        className="date-time-input min-w-0 w-full bg-transparent text-[12px] font-extrabold tracking-[-0.1px] text-[#3D3835] outline-none sm:text-[13px]"
                       />
                     </div>
                   </div>
                 </div>
 
+                {/* İADE TARİHİ */}
                 <div className="reservation-field">
                   <label className="reservation-label">
                     İade Tarihi ve Saati
                   </label>
 
-                  <div className="flex items-center gap-[10px]">
-                    <div className="flex min-w-0 flex-1 items-center gap-[7px]">
+                  <div className="flex items-center gap-[9px]">
+                    <div className="flex min-w-0 flex-1 items-center gap-[8px]">
                       <CalendarSmallIcon />
 
                       <input
@@ -302,19 +304,19 @@ export default function Home() {
                         value={returnDate}
                         min={pickupDate}
                         onChange={(e) => setReturnDate(e.target.value)}
-                        className="min-w-0 w-full bg-transparent text-[11px] font-bold text-[#514A46] outline-none"
+                        className="date-time-input min-w-0 w-full bg-transparent text-[13px] font-extrabold tracking-[-0.2px] text-[#3D3835] outline-none sm:text-[14px]"
                       />
                     </div>
 
-                    <div className="h-[26px] w-px bg-[#EAE3DE]" />
+                    <div className="h-[29px] w-px shrink-0 bg-[#EAE3DE]" />
 
-                    <div className="flex w-[82px] items-center gap-[6px]">
+                    <div className="flex w-[88px] shrink-0 items-center gap-[7px]">
                       <ClockIcon />
 
                       <input
                         type="time"
                         defaultValue="10:00"
-                        className="min-w-0 w-full bg-transparent text-[11px] font-bold text-[#514A46] outline-none"
+                        className="date-time-input min-w-0 w-full bg-transparent text-[12px] font-extrabold tracking-[-0.1px] text-[#3D3835] outline-none sm:text-[13px]"
                       />
                     </div>
                   </div>
@@ -810,10 +812,26 @@ export default function Home() {
           text-transform: uppercase;
         }
 
+        .date-time-input {
+          min-height: 24px;
+          color: #3d3835;
+          font-weight: 800;
+        }
+
+        .date-time-input::-webkit-datetime-edit {
+          padding: 0;
+          font-weight: 800;
+        }
+
+        .date-time-input::-webkit-datetime-edit-fields-wrapper {
+          padding: 0;
+        }
+
         input[type="date"]::-webkit-calendar-picker-indicator,
         input[type="time"]::-webkit-calendar-picker-indicator {
           cursor: pointer;
-          opacity: 0.55;
+          opacity: 0.7;
+          margin-left: 1px;
         }
 
         @media (max-width: 1023px) {
@@ -821,6 +839,17 @@ export default function Home() {
             min-height: 72px;
             border-right: 0;
             border-bottom: 1px solid #eee8e3;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .date-time-input {
+            font-size: 13px;
+          }
+
+          .reservation-field {
+            padding-left: 16px;
+            padding-right: 16px;
           }
         }
       `}</style>
@@ -1201,31 +1230,41 @@ function LocationIcon() {
   );
 }
 
+/* BÜYÜTÜLMÜŞ TAKVİM İKONU */
 function CalendarSmallIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#ED1739"
-      strokeWidth="1.8"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 text-[#ED1739]"
+      aria-hidden="true"
     >
-      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <rect x="3" y="5" width="18" height="16" rx="2.5" />
       <path d="M16 3v4M8 3v4M3 10h18" />
     </svg>
   );
 }
 
+/* BÜYÜTÜLMÜŞ SAAT İKONU */
 function ClockIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#ED1739"
-      strokeWidth="1.8"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 text-[#ED1739]"
+      aria-hidden="true"
     >
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7v5l3 2" />
