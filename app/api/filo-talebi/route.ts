@@ -54,7 +54,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "M2CAR Web Sitesi <onboarding@resend.dev>",
+      from: "M2CAR Web Sitesi <web@m2car.com.tr>",
       to: ["info@m2car.com.tr"],
       replyTo: email,
       subject: `Yeni Filo Talebi - ${adSoyad}`,
@@ -160,7 +160,9 @@ export async function POST(request: Request) {
                     </div>
 
                     <div style="padding:15px;background:#fbf8f4;border-radius:8px;font-size:13px;line-height:1.7;white-space:pre-wrap;">
-                      ${escapeHtml(talepDetayi || "Talep detayı belirtilmedi.")}
+                      ${escapeHtml(
+                        talepDetayi || "Talep detayı belirtilmedi."
+                      )}
                     </div>
 
                   </div>
@@ -193,7 +195,6 @@ export async function POST(request: Request) {
       success: true,
       id: data?.id,
     });
-
   } catch (error) {
     console.error("Filo talebi API hatası:", error);
 
