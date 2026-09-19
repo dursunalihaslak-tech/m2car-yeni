@@ -18,11 +18,47 @@ const locations = [
   "SABİHA GÖKÇEN HAVALİMANI",
 ];
 
+function formatDate(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
+function getInitialDates() {
+  const today = new Date();
+  const returnDay = new Date(today);
+  returnDay.setDate(today.getDate() + 3);
+
+  return {
+    pickup: formatDate(today),
+    returnDate: formatDate(returnDay),
+  };
+}
+
 export default function Home() {
+  const initialDates = getInitialDates();
+
   const [rentalType, setRentalType] = useState<"daily" | "monthly">("daily");
   const [differentReturn, setDifferentReturn] = useState(false);
   const [promoOpen, setPromoOpen] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+
+  const [pickupDate, setPickupDate] = useState(initialDates.pickup);
+  const [returnDate, setReturnDate] = useState(initialDates.returnDate);
+
+  function handlePickupDateChange(value: string) {
+    setPickupDate(value);
+
+    if (!value) return;
+
+    const selected = new Date(`${value}T12:00:00`);
+    const newReturnDate = new Date(selected);
+    newReturnDate.setDate(selected.getDate() + 3);
+
+    setReturnDate(formatDate(newReturnDate));
+  }
 
   return (
     <main
@@ -42,7 +78,6 @@ export default function Home() {
                 <div className="text-[26px] font-extrabold leading-none tracking-[-1.7px] text-white">
                   M2CAR
                 </div>
-
                 <div className="mt-[7px] text-[7px] font-extrabold uppercase tracking-[2.3px] text-white/80">
                   ARAÇ KİRALAMA
                 </div>
@@ -54,7 +89,6 @@ export default function Home() {
             <Nav href="/" active>
               Ana Sayfa
             </Nav>
-
             <Nav href="/araclarimiz">Araçlarımız</Nav>
             <Nav href="/kampanyalar">Kampanyalar</Nav>
             <Nav href="/filo-talebi">Filo Talebi</Nav>
@@ -75,7 +109,6 @@ export default function Home() {
               <span className="block text-[9px] font-extrabold uppercase tracking-[1.4px] text-[#918883]">
                 Rezervasyon Hattı
               </span>
-
               <span className="mt-[2px] block text-[14px] font-extrabold text-[#332F2C]">
                 0850 888 80 98
               </span>
@@ -98,7 +131,6 @@ export default function Home() {
               <MobileNav href="/" active>
                 Ana Sayfa
               </MobileNav>
-
               <MobileNav href="/araclarimiz">Araçlarımız</MobileNav>
               <MobileNav href="/kampanyalar">Kampanyalar</MobileNav>
               <MobileNav href="/filo-talebi">Filo Talebi</MobileNav>
@@ -124,7 +156,6 @@ export default function Home() {
             <div className="relative z-20 py-[25px] lg:pl-[15px]">
               <div className="mb-[14px] flex items-center gap-[9px]">
                 <span className="h-[2px] w-[28px] rounded-full bg-[#ED1739]" />
-
                 <span className="text-[8px] font-extrabold uppercase tracking-[2px] text-[#D71935]">
                   Araç Kiralama
                 </span>
@@ -234,6 +265,11 @@ export default function Home() {
 
                       <input
                         type="date"
+                        value={pickupDate}
+                        min={initialDates.pickup}
+                        onChange={(e) =>
+                          handlePickupDateChange(e.target.value)
+                        }
                         className="min-w-0 w-full bg-transparent text-[11px] font-bold text-[#514A46] outline-none"
                       />
                     </div>
@@ -263,6 +299,9 @@ export default function Home() {
 
                       <input
                         type="date"
+                        value={returnDate}
+                        min={pickupDate}
+                        onChange={(e) => setReturnDate(e.target.value)}
                         className="min-w-0 w-full bg-transparent text-[11px] font-bold text-[#514A46] outline-none"
                       />
                     </div>
@@ -417,11 +456,8 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-[18px] border border-[#E9E3DE] bg-[#FFFDFC] shadow-[0_14px_38px_rgba(64,47,39,.055)]">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
               <div className="absolute -left-[120px] -top-[170px] h-[380px] w-[380px] rounded-full bg-[#FFF2F3] blur-[100px]" />
-
               <div className="absolute left-[53%] top-[-330px] hidden h-[650px] w-[650px] rounded-full border border-[#ED1739]/[0.12] lg:block" />
-
               <div className="absolute left-[63%] top-[175px] hidden h-[11px] w-[11px] rounded-full bg-[#F5A8B3] lg:block" />
-
               <div className="absolute -bottom-[240px] -right-[190px] h-[440px] w-[440px] rounded-full bg-[#FFF1EE]" />
             </div>
 
@@ -429,7 +465,6 @@ export default function Home() {
               <div className="px-[28px] py-[30px] sm:px-[40px] lg:px-[48px] lg:py-[34px]">
                 <div className="inline-flex items-center gap-[10px] rounded-full border border-[#F0DFE1] bg-white px-[15px] py-[7px]">
                   <span className="h-[2px] w-[25px] rounded-full bg-[#ED1739]" />
-
                   <span className="text-[8px] font-extrabold uppercase tracking-[1.8px] text-[#D71935]">
                     Uzun Dönem Kiralama
                   </span>
@@ -614,7 +649,6 @@ export default function Home() {
       <footer className="border-t border-[#E7DFD9] bg-[#F8F5F1]">
         <div className="mx-auto max-w-[1340px] px-5 py-[42px] sm:px-6 lg:py-[48px]">
           <div className="grid gap-[36px] sm:grid-cols-2 lg:grid-cols-[1.45fr_.85fr_1fr_1.15fr] lg:gap-[55px]">
-            {/* M2CAR */}
             <div>
               <FooterTitle>M2CAR Araç Kiralama</FooterTitle>
 
@@ -635,7 +669,6 @@ export default function Home() {
                   <span className="block text-[9px] font-extrabold uppercase tracking-[1.7px] text-[#918883]">
                     Rezervasyon Hattı
                   </span>
-
                   <span className="mt-[3px] block text-[17px] font-extrabold tracking-[-.3px] text-[#332F2C]">
                     0850 888 80 98
                   </span>
@@ -643,7 +676,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* KURUMSAL */}
             <div>
               <FooterTitle>Kurumsal</FooterTitle>
 
@@ -656,7 +688,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* HİZMET BÖLGELERİ */}
             <div>
               <FooterTitle>Hizmet Bölgelerimiz</FooterTitle>
 
@@ -669,7 +700,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* TESLİMAT */}
             <div>
               <FooterTitle>Teslimat & Hizmetler</FooterTitle>
 
