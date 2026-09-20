@@ -11,6 +11,9 @@ const manrope = Manrope({
 const googleMapsUrl =
   "https://www.google.com/maps/place/M2Car+Ara%C3%A7+Kiralama-Beylikd%C3%BCz%C3%BC/@41.012022,28.6404721,17z/data=!3m1!4b1!4m6!3m5!1s0x14b55f31e872e13d:0x15a054b87736fa7e!8m2!3d41.012022!4d28.643047!16s%2Fg%2F11yfgpwm52";
 
+const whatsappUrl =
+  "https://wa.me/905336027805?text=Merhaba%20M2Car%2C%20ara%C3%A7%20kiralama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
+
 export default function IletisimPage() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [sent, setSent] = useState(false);
@@ -30,11 +33,15 @@ export default function IletisimPage() {
       <header className="relative z-50 border-b border-[#EEE8E3] border-t-[2px] border-t-[#ED1739] bg-white">
         <div className="mx-auto flex h-[96px] max-w-[1340px] items-center px-5 sm:px-6">
           {/* LOGO */}
-          <a href="/" className="flex shrink-0 items-center">
+          <a
+            href="/"
+            aria-label="M2CAR Araç Kiralama"
+            className="flex shrink-0 items-center"
+          >
             <div className="relative flex h-[64px] w-[165px] items-center justify-center overflow-hidden rounded-[12px] bg-[#ED1739] shadow-[0_10px_27px_rgba(237,23,57,.18)]">
               <div className="absolute -right-[32px] -top-[58px] h-[125px] w-[125px] rounded-full border border-white/[0.08]" />
 
-              <div className="text-center">
+              <div className="relative text-center">
                 <div className="text-[26px] font-extrabold leading-none tracking-[-1.9px] text-white">
                   M2CAR
                 </div>
@@ -128,9 +135,9 @@ export default function IletisimPage() {
             {/* TELEFON */}
             <a
               href="tel:08508888098"
-              className="flex items-center gap-[14px] rounded-[14px] border border-[#EAE3DE] bg-white p-[18px] transition hover:border-[#F1CDD3] hover:shadow-[0_10px_25px_rgba(73,54,45,.05)]"
+              className="group flex items-center gap-[14px] rounded-[14px] border border-[#EAE3DE] bg-white p-[18px] transition hover:border-[#F1CDD3] hover:shadow-[0_10px_25px_rgba(73,54,45,.05)]"
             >
-              <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-[11px] bg-[#FFF0F2] text-[#ED1739]">
+              <div className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFF0F2] text-[#ED1739] transition group-hover:bg-[#ED1739] group-hover:text-white">
                 <PhoneIcon />
               </div>
 
@@ -147,12 +154,12 @@ export default function IletisimPage() {
 
             {/* WHATSAPP */}
             <a
-              href="https://wa.me/905336027805?text=Merhaba%20M2Car%2C%20ara%C3%A7%20kiralama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-[14px] rounded-[14px] border border-[#EAE3DE] bg-white p-[18px] transition hover:border-[#F1CDD3] hover:shadow-[0_10px_25px_rgba(73,54,45,.05)]"
+              className="group flex items-center gap-[14px] rounded-[14px] border border-[#EAE3DE] bg-white p-[18px] transition hover:border-[#F1CDD3] hover:shadow-[0_10px_25px_rgba(73,54,45,.05)]"
             >
-              <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-[11px] bg-[#FFF0F2] text-[#ED1739]">
+              <div className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFF0F2] text-[#ED1739] transition group-hover:bg-[#ED1739] group-hover:text-white">
                 <WhatsAppIcon />
               </div>
 
@@ -167,24 +174,22 @@ export default function IletisimPage() {
               </div>
             </a>
 
-            {/* ADRES */}
+            {/* E-POSTA */}
             <a
-              href={googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-[14px] rounded-[14px] border border-[#EAE3DE] bg-white p-[18px] transition hover:border-[#F1CDD3] hover:shadow-[0_10px_25px_rgba(73,54,45,.05)]"
+              href="mailto:info@m2car.com.tr"
+              className="group flex items-center gap-[14px] rounded-[14px] border border-[#EAE3DE] bg-white p-[18px] transition hover:border-[#F1CDD3] hover:shadow-[0_10px_25px_rgba(73,54,45,.05)]"
             >
-              <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-[11px] bg-[#FFF0F2] text-[#ED1739]">
-                <LocationIcon />
+              <div className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFF0F2] text-[#ED1739] transition group-hover:bg-[#ED1739] group-hover:text-white">
+                <MailIcon />
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <div className="text-[11px] font-semibold text-[#918984]">
-                  Ofisimiz
+                  E-posta
                 </div>
 
-                <div className="mt-[3px] text-[13px] font-extrabold text-[#3D3835]">
-                  Beycity Çarşı / Beylikdüzü
+                <div className="mt-[3px] break-all text-[14px] font-extrabold text-[#3D3835]">
+                  info@m2car.com.tr
                 </div>
               </div>
             </a>
@@ -491,16 +496,17 @@ function FormField({
 function PhoneIcon() {
   return (
     <svg
-      width="18"
-      height="18"
+      width="21"
+      height="21"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.9"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3" />
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z" />
     </svg>
   );
 }
@@ -508,36 +514,32 @@ function PhoneIcon() {
 function WhatsAppIcon() {
   return (
     <svg
-      width="20"
-      height="20"
+      width="23"
+      height="23"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="currentColor"
+      aria-hidden="true"
     >
-      <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 9 9 0 0 1-3.8-.9L3 21l1.7-5a8.5 8.5 0 1 1 16.3-4.5Z" />
-      <path d="M9 8.5c.5 2.5 2 4 4.5 5" />
-      <path d="M13.5 13.5l1.5-1" />
+      <path d="M12.04 2C6.52 2 2.03 6.48 2.03 12c0 1.76.46 3.48 1.33 4.99L2 22l5.14-1.35A9.96 9.96 0 0 0 12.04 22C17.56 22 22 17.52 22 12S17.56 2 12.04 2Zm0 18.18a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.05.8.81-2.97-.2-.31A8.17 8.17 0 1 1 12.04 20.18Zm4.48-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22a7.42 7.42 0 0 1-1.37-1.7c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.15-1.17-.06-.11-.23-.17-.47-.29Z" />
     </svg>
   );
 }
 
-function LocationIcon() {
+function MailIcon() {
   return (
     <svg
-      width="19"
-      height="19"
+      width="22"
+      height="22"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
-      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
-      <circle cx="12" cy="10" r="2.5" />
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
     </svg>
   );
 }
