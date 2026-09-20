@@ -528,7 +528,7 @@ export default function AraclarimizPage() {
               </p>
             </div>
 
-            <div className="hidden items-center gap-[10px] lg:flex">
+            <div className="hidden items-center gap-[10px] lg:mr-[28px] lg:translate-y-[5px] lg:flex">
               <span className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
                 <CheckIcon />
               </span>
@@ -661,7 +661,7 @@ export default function AraclarimizPage() {
 
                   <div className="h-[28px] w-px bg-[#EAE3DE]" />
 
-                  <div className="flex w-[92px] shrink-0 items-center gap-[7px]">
+                  <div className="flex w-[110px] shrink-0 items-center gap-[7px]">
                     <ClockIcon />
 
                     <input
@@ -704,7 +704,7 @@ export default function AraclarimizPage() {
 
                   <div className="h-[28px] w-px bg-[#EAE3DE]" />
 
-                  <div className="flex w-[92px] shrink-0 items-center gap-[7px]">
+                  <div className="flex w-[110px] shrink-0 items-center gap-[7px]">
                     <ClockIcon />
 
                     <input
@@ -727,7 +727,7 @@ export default function AraclarimizPage() {
                 <button
                   type="button"
                   onClick={handleSearch}
-                  className="flex h-[58px] w-full min-w-[132px] items-center justify-center gap-[9px] rounded-[10px] bg-[#ED1739] px-[25px] text-[13px] font-extrabold uppercase tracking-[.8px] text-white shadow-[0_10px_24px_rgba(237,23,57,.22)] transition hover:bg-[#CE1431] lg:w-auto"
+                  className="flex h-[54px] w-full min-w-[124px] items-center justify-center gap-[8px] rounded-[10px] bg-[#ED1739] px-[22px] text-[12.5px] font-extrabold uppercase tracking-[.8px] text-white shadow-[0_10px_24px_rgba(237,23,57,.22)] transition hover:bg-[#CE1431] lg:w-auto"
                 >
                   <SearchIcon />
                   Ara
