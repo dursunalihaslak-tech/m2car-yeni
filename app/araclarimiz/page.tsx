@@ -27,12 +27,17 @@ type Vehicle = {
   transmission: string;
   passengers: string;
   images: string[];
-  onlinePrice: string;
-  officePrice: string;
+
+  onlinePrice: number;
+  officePrice: number;
+
+  monthlyOnlinePrice: number;
+  monthlyOfficePrice: number;
+
   minAge: number;
   licenseYears: number;
   dailyKm: number;
-  deposit: string;
+  deposit: number;
 };
 
 const vehicles: Vehicle[] = [
@@ -45,12 +50,14 @@ const vehicles: Vehicle[] = [
     transmission: "Otomatik",
     passengers: "5 Kişi",
     images: ["/cars/clio.png", "/cars/clio-2.png"],
-    onlinePrice: "2.049 TL",
-    officePrice: "2.350 TL",
+    onlinePrice: 2049,
+    officePrice: 2350,
+    monthlyOnlinePrice: 44900,
+    monthlyOfficePrice: 47900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 2,
@@ -61,12 +68,14 @@ const vehicles: Vehicle[] = [
     transmission: "Otomatik",
     passengers: "5 Kişi",
     images: ["/cars/megane.png", "/cars/megane-2.png"],
-    onlinePrice: "2.549 TL",
-    officePrice: "2.850 TL",
+    onlinePrice: 2549,
+    officePrice: 2850,
+    monthlyOnlinePrice: 54900,
+    monthlyOfficePrice: 58900,
     minAge: 23,
     licenseYears: 2,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 3,
@@ -77,12 +86,14 @@ const vehicles: Vehicle[] = [
     transmission: "Otomatik",
     passengers: "5 Kişi",
     images: ["/cars/taliant.png", "/cars/taliant-2.png"],
-    onlinePrice: "2.149 TL",
-    officePrice: "2.450 TL",
+    onlinePrice: 2149,
+    officePrice: 2450,
+    monthlyOnlinePrice: 46900,
+    monthlyOfficePrice: 49900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 4,
@@ -93,12 +104,14 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/fiorino-lpg.png", "/cars/fiorino-lpg-2.png"],
-    onlinePrice: "1.999 TL",
-    officePrice: "2.300 TL",
+    onlinePrice: 1999,
+    officePrice: 2300,
+    monthlyOnlinePrice: 42900,
+    monthlyOfficePrice: 45900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 5,
@@ -109,12 +122,14 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/fiorino-dizel.png"],
-    onlinePrice: "2.199 TL",
-    officePrice: "2.500 TL",
+    onlinePrice: 2199,
+    officePrice: 2500,
+    monthlyOnlinePrice: 46900,
+    monthlyOfficePrice: 49900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 6,
@@ -125,12 +140,14 @@ const vehicles: Vehicle[] = [
     transmission: "Otomatik",
     passengers: "5 Kişi",
     images: ["/cars/sandero.png", "/cars/sandero-2.png"],
-    onlinePrice: "2.249 TL",
-    officePrice: "2.550 TL",
+    onlinePrice: 2249,
+    officePrice: 2550,
+    monthlyOnlinePrice: 47900,
+    monthlyOfficePrice: 50900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 7,
@@ -141,12 +158,14 @@ const vehicles: Vehicle[] = [
     transmission: "Otomatik",
     passengers: "5 Kişi",
     images: ["/cars/3008.png", "/cars/3008-2.png"],
-    onlinePrice: "3.299 TL",
-    officePrice: "3.650 TL",
+    onlinePrice: 3299,
+    officePrice: 3650,
+    monthlyOnlinePrice: 69900,
+    monthlyOfficePrice: 74900,
     minAge: 23,
     licenseYears: 2,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 8,
@@ -157,12 +176,14 @@ const vehicles: Vehicle[] = [
     transmission: "Otomatik",
     passengers: "5 Kişi",
     images: ["/cars/i20.png"],
-    onlinePrice: "2.149 TL",
-    officePrice: "2.450 TL",
+    onlinePrice: 2149,
+    officePrice: 2450,
+    monthlyOnlinePrice: 45900,
+    monthlyOfficePrice: 48900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 9,
@@ -173,12 +194,14 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/egea-benzin.png"],
-    onlinePrice: "1.949 TL",
-    officePrice: "2.250 TL",
+    onlinePrice: 1949,
+    officePrice: 2250,
+    monthlyOnlinePrice: 41900,
+    monthlyOfficePrice: 44900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 10,
@@ -189,12 +212,14 @@ const vehicles: Vehicle[] = [
     transmission: "Otomatik",
     passengers: "5 Kişi",
     images: ["/cars/egea-dizel-otomatik.png"],
-    onlinePrice: "2.349 TL",
-    officePrice: "2.650 TL",
+    onlinePrice: 2349,
+    officePrice: 2650,
+    monthlyOnlinePrice: 49900,
+    monthlyOfficePrice: 53900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
   {
     id: 11,
@@ -205,24 +230,72 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/egea-dizel-manuel.png"],
-    onlinePrice: "2.149 TL",
-    officePrice: "2.450 TL",
+    onlinePrice: 2149,
+    officePrice: 2450,
+    monthlyOnlinePrice: 45900,
+    monthlyOfficePrice: 48900,
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: "7.000 TL",
+    deposit: 7000,
   },
 ];
 
+function formatMoney(value: number) {
+  return `${new Intl.NumberFormat("tr-TR").format(value)} TL`;
+}
+
+function formatDate(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function getInitialDates() {
+  const today = new Date();
+  const returnDay = new Date(today);
+  returnDay.setDate(today.getDate() + 3);
+
+  return {
+    pickup: formatDate(today),
+    returnDate: formatDate(returnDay),
+  };
+}
+
+function addMonthsToDate(dateString: string, months: number) {
+  if (!dateString) return "";
+
+  const date = new Date(`${dateString}T12:00:00`);
+  const originalDay = date.getDate();
+
+  date.setDate(1);
+  date.setMonth(date.getMonth() + months);
+
+  const lastDayOfTargetMonth = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDate();
+
+  date.setDate(Math.min(originalDay, lastDayOfTargetMonth));
+
+  return formatDate(date);
+}
+
 export default function AraclarimizPage() {
+  const initialDates = getInitialDates();
+
   const [mobileMenu, setMobileMenu] = useState(false);
   const [rentalType, setRentalType] = useState<"daily" | "monthly">("daily");
 
   const [pickupLocation, setPickupLocation] = useState("BEYLİKDÜZÜ");
-  const [pickupDate, setPickupDate] = useState("");
+  const [pickupDate, setPickupDate] = useState(initialDates.pickup);
   const [pickupTime, setPickupTime] = useState("10:00");
-  const [returnDate, setReturnDate] = useState("");
+  const [returnDate, setReturnDate] = useState(initialDates.returnDate);
   const [returnTime, setReturnTime] = useState("10:00");
+
+  const [monthlyCount, setMonthlyCount] = useState(1);
 
   const [differentReturn, setDifferentReturn] = useState(false);
   const [returnLocation, setReturnLocation] = useState("BEYLİKDÜZÜ");
@@ -232,6 +305,97 @@ export default function AraclarimizPage() {
   const [categoryFilter, setCategoryFilter] = useState("Tümü");
   const [transmissionFilter, setTransmissionFilter] = useState("Tümü");
   const [fuelFilter, setFuelFilter] = useState("Tümü");
+
+  const [searchMessage, setSearchMessage] = useState("");
+
+  const rentalDays = useMemo(() => {
+    if (!pickupDate || !returnDate) return 1;
+
+    const pickup = new Date(`${pickupDate}T${pickupTime}`);
+    const returning = new Date(`${returnDate}T${returnTime}`);
+
+    const difference = returning.getTime() - pickup.getTime();
+
+    if (difference <= 0) return 1;
+
+    const oneDay = 1000 * 60 * 60 * 24;
+
+    return Math.max(1, Math.ceil(difference / oneDay));
+  }, [pickupDate, pickupTime, returnDate, returnTime]);
+
+  function handleRentalTypeChange(type: "daily" | "monthly") {
+    setRentalType(type);
+    setSearchMessage("");
+
+    if (type === "monthly") {
+      setMonthlyCount(1);
+      setReturnDate(addMonthsToDate(pickupDate, 1));
+      setReturnTime(pickupTime);
+    } else {
+      const selected = new Date(`${pickupDate}T12:00:00`);
+      const newReturnDate = new Date(selected);
+      newReturnDate.setDate(selected.getDate() + 3);
+
+      setReturnDate(formatDate(newReturnDate));
+      setReturnTime(pickupTime);
+    }
+  }
+
+  function handlePickupDateChange(value: string) {
+    setPickupDate(value);
+    setSearchMessage("");
+
+    if (!value) return;
+
+    if (rentalType === "monthly") {
+      setReturnDate(addMonthsToDate(value, monthlyCount));
+      return;
+    }
+
+    const selected = new Date(`${value}T12:00:00`);
+    const newReturnDate = new Date(selected);
+    newReturnDate.setDate(selected.getDate() + 3);
+
+    setReturnDate(formatDate(newReturnDate));
+  }
+
+  function handleMonthlyCountChange(value: number) {
+    setMonthlyCount(value);
+    setReturnDate(addMonthsToDate(pickupDate, value));
+    setReturnTime(pickupTime);
+    setSearchMessage("");
+  }
+
+  function handleSearch() {
+    if (!pickupDate || !returnDate) {
+      setSearchMessage("Lütfen alış ve iade tarihlerini seçin.");
+      return;
+    }
+
+    const pickup = new Date(`${pickupDate}T${pickupTime}`);
+    const returning = new Date(`${returnDate}T${returnTime}`);
+
+    if (returning <= pickup) {
+      setSearchMessage("İade tarihi alış tarihinden sonra olmalıdır.");
+      return;
+    }
+
+    if (rentalType === "monthly") {
+      setSearchMessage(
+        `${monthlyCount} aylık kiralama için özel fiyatlar gösteriliyor.`
+      );
+    } else {
+      setSearchMessage(
+        `${rentalDays} günlük kiralama için toplam fiyatlar gösteriliyor.`
+      );
+    }
+
+    setTimeout(() => {
+      document
+        .getElementById("arac-listesi")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
 
   const filteredVehicles = useMemo(() => {
     return vehicles.filter((vehicle) => {
@@ -260,7 +424,7 @@ export default function AraclarimizPage() {
           <a
             href="/"
             aria-label="M2CAR Araç Kiralama"
-            className="group flex shrink-0 items-center"
+            className="flex shrink-0 items-center"
           >
             <div className="relative flex h-[64px] w-[165px] items-center justify-center overflow-hidden rounded-[12px] bg-[#ED1739] shadow-[0_10px_27px_rgba(237,23,57,.19)]">
               <div className="absolute -right-[32px] -top-[58px] h-[125px] w-[125px] rounded-full border border-white/[0.08]" />
@@ -358,22 +522,23 @@ export default function AraclarimizPage() {
                 <span className="text-[#ED1739]"> aracı bulun.</span>
               </h1>
 
-              <p className="mt-[11px] max-w-[610px] text-[11.5px] font-medium leading-[1.8] text-[#817974]">
+              <p className="mt-[11px] max-w-[610px] text-[12.5px] font-semibold leading-[1.8] text-[#746C67]">
                 Ekonomik sınıftan SUV seçeneklerine kadar farklı kullanım
                 ihtiyaçlarına uygun araçlarımızı inceleyin.
               </p>
             </div>
 
-            <div className="hidden items-center gap-[9px] lg:flex">
-              <span className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
+            <div className="hidden items-center gap-[10px] lg:flex">
+              <span className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
                 <CheckIcon />
               </span>
 
               <div>
-                <div className="text-[10px] font-extrabold text-[#4E4844]">
+                <div className="text-[11px] font-extrabold text-[#4E4844]">
                   11 araç seçeneği
                 </div>
-                <div className="mt-[2px] text-[8px] font-medium text-[#9B928D]">
+
+                <div className="mt-[2px] text-[9px] font-semibold text-[#8F8681]">
                   Günlük · Haftalık · Aylık
                 </div>
               </div>
@@ -385,15 +550,15 @@ export default function AraclarimizPage() {
       {/* REZERVASYON */}
       <section className="bg-[#FBF9F6] pt-[25px]">
         <div className="mx-auto max-w-[1340px] px-5 sm:px-6">
-          <div className="mb-[9px] flex flex-wrap items-center justify-between gap-3">
+          <div className="mb-[11px] flex flex-wrap items-center justify-between gap-3">
             <div className="inline-flex rounded-[10px] border border-[#E9E2DD] bg-white p-[4px]">
               <button
                 type="button"
-                onClick={() => setRentalType("daily")}
-                className={`rounded-[7px] px-[20px] py-[9px] text-[9px] font-bold transition ${
+                onClick={() => handleRentalTypeChange("daily")}
+                className={`rounded-[8px] px-[24px] py-[11px] text-[12px] font-extrabold transition ${
                   rentalType === "daily"
                     ? "bg-[#ED1739] text-white"
-                    : "text-[#716965]"
+                    : "text-[#625A55]"
                 }`}
               >
                 Günlük Kiralama
@@ -401,24 +566,63 @@ export default function AraclarimizPage() {
 
               <button
                 type="button"
-                onClick={() => setRentalType("monthly")}
-                className={`rounded-[7px] px-[20px] py-[9px] text-[9px] font-bold transition ${
+                onClick={() => handleRentalTypeChange("monthly")}
+                className={`rounded-[8px] px-[24px] py-[11px] text-[12px] font-extrabold transition ${
                   rentalType === "monthly"
                     ? "bg-[#ED1739] text-white"
-                    : "text-[#716965]"
+                    : "text-[#625A55]"
                 }`}
               >
                 Aylık Kiralama
               </button>
             </div>
 
-            <span className="hidden text-[8.5px] font-semibold text-[#9A918B] sm:block">
-              Tarihlerinizi belirleyin, uygun araçları inceleyin.
+            <span className="hidden text-[10px] font-bold text-[#817974] sm:block">
+              {rentalType === "daily"
+                ? "Tarihlerinizi belirleyin, toplam kiralama ücretini görün."
+                : "Uzun dönem kiralamaya özel avantajlı fiyatlardan yararlanın."}
             </span>
           </div>
 
+          {rentalType === "monthly" && (
+            <div className="mb-[12px] flex flex-col justify-between gap-3 rounded-[13px] border border-[#F3D9DE] bg-[#FFF5F6] px-[16px] py-[13px] sm:flex-row sm:items-center">
+              <div>
+                <span className="block text-[8px] font-extrabold uppercase tracking-[1.3px] text-[#D71935]">
+                  Aylık Özel Fiyat
+                </span>
+
+                <span className="mt-[3px] block text-[10px] font-semibold text-[#625A55]">
+                  Uzun dönem kiralamada günlük tarifeye göre avantajlı fiyat
+                  uygulanır.
+                </span>
+              </div>
+
+              <div className="flex items-center gap-[8px]">
+                <span className="text-[9px] font-extrabold text-[#514A46]">
+                  Kiralama Süresi
+                </span>
+
+                <select
+                  value={monthlyCount}
+                  onChange={(e) =>
+                    handleMonthlyCountChange(Number(e.target.value))
+                  }
+                  className="h-[38px] rounded-[8px] border border-[#E8CDD2] bg-white px-[12px] text-[10px] font-extrabold text-[#403A36] outline-none"
+                >
+                  <option value={1}>1 Ay</option>
+                  <option value={2}>2 Ay</option>
+                  <option value={3}>3 Ay</option>
+                  <option value={4}>4 Ay</option>
+                  <option value={5}>5 Ay</option>
+                  <option value={6}>6 Ay</option>
+                  <option value={12}>12 Ay</option>
+                </select>
+              </div>
+            </div>
+          )}
+
           <div className="overflow-hidden rounded-[16px] border border-[#E9E1DB] bg-white shadow-[0_15px_40px_rgba(73,52,43,.06)]">
-            <div className="grid lg:grid-cols-3">
+            <div className="grid lg:grid-cols-[1fr_1fr_1fr_auto]">
               <ReservationField label="Alış Lokasyonu">
                 <div className="flex items-center gap-[10px]">
                   <span className="text-[#ED1739]">
@@ -428,7 +632,7 @@ export default function AraclarimizPage() {
                   <select
                     value={pickupLocation}
                     onChange={(e) => setPickupLocation(e.target.value)}
-                    className="w-full appearance-none bg-transparent text-[11px] font-bold text-[#514A46] outline-none"
+                    className="w-full appearance-none bg-transparent text-[14px] font-extrabold text-[#332F2C] outline-none"
                   >
                     {locations.map((location) => (
                       <option key={location}>{location}</option>
@@ -441,68 +645,103 @@ export default function AraclarimizPage() {
 
               <ReservationField label="Alış Tarihi ve Saati">
                 <div className="flex items-center gap-[12px]">
-                  <div className="flex min-w-0 flex-1 items-center gap-[7px]">
+                  <div className="flex min-w-0 flex-1 items-center gap-[8px]">
                     <CalendarIcon />
 
                     <input
                       type="date"
                       value={pickupDate}
-                      onChange={(e) => setPickupDate(e.target.value)}
-                      className="min-w-0 w-full bg-transparent text-[10px] font-semibold text-[#514A46] outline-none"
+                      min={formatDate(new Date())}
+                      onChange={(e) =>
+                        handlePickupDateChange(e.target.value)
+                      }
+                      className="date-time-input min-w-0 w-full bg-transparent text-[15px] font-extrabold text-[#332F2C] outline-none sm:text-[16px]"
                     />
                   </div>
 
-                  <div className="h-[25px] w-px bg-[#EAE3DE]" />
+                  <div className="h-[28px] w-px bg-[#EAE3DE]" />
 
-                  <div className="flex w-[86px] items-center gap-[6px]">
+                  <div className="flex w-[92px] shrink-0 items-center gap-[7px]">
                     <ClockIcon />
 
                     <input
                       type="time"
                       value={pickupTime}
-                      onChange={(e) => setPickupTime(e.target.value)}
-                      className="min-w-0 w-full bg-transparent text-[10px] font-semibold text-[#514A46] outline-none"
+                      onChange={(e) => {
+                        setPickupTime(e.target.value);
+
+                        if (rentalType === "monthly") {
+                          setReturnTime(e.target.value);
+                        }
+
+                        setSearchMessage("");
+                      }}
+                      className="date-time-input min-w-0 w-full bg-transparent text-[14px] font-extrabold text-[#332F2C] outline-none sm:text-[15px]"
                     />
                   </div>
                 </div>
               </ReservationField>
 
-              <ReservationField label="İade Tarihi ve Saati" last>
+              <ReservationField label="İade Tarihi ve Saati">
                 <div className="flex items-center gap-[12px]">
-                  <div className="flex min-w-0 flex-1 items-center gap-[7px]">
+                  <div className="flex min-w-0 flex-1 items-center gap-[8px]">
                     <CalendarIcon />
 
                     <input
                       type="date"
                       value={returnDate}
-                      onChange={(e) => setReturnDate(e.target.value)}
-                      className="min-w-0 w-full bg-transparent text-[10px] font-semibold text-[#514A46] outline-none"
+                      min={pickupDate || formatDate(new Date())}
+                      onChange={(e) => {
+                        setReturnDate(e.target.value);
+                        setSearchMessage("");
+                      }}
+                      disabled={rentalType === "monthly"}
+                      className={`date-time-input min-w-0 w-full bg-transparent text-[15px] font-extrabold text-[#332F2C] outline-none sm:text-[16px] ${
+                        rentalType === "monthly" ? "cursor-not-allowed" : ""
+                      }`}
                     />
                   </div>
 
-                  <div className="h-[25px] w-px bg-[#EAE3DE]" />
+                  <div className="h-[28px] w-px bg-[#EAE3DE]" />
 
-                  <div className="flex w-[86px] items-center gap-[6px]">
+                  <div className="flex w-[92px] shrink-0 items-center gap-[7px]">
                     <ClockIcon />
 
                     <input
                       type="time"
                       value={returnTime}
-                      onChange={(e) => setReturnTime(e.target.value)}
-                      className="min-w-0 w-full bg-transparent text-[10px] font-semibold text-[#514A46] outline-none"
+                      onChange={(e) => {
+                        setReturnTime(e.target.value);
+                        setSearchMessage("");
+                      }}
+                      disabled={rentalType === "monthly"}
+                      className={`date-time-input min-w-0 w-full bg-transparent text-[14px] font-extrabold text-[#332F2C] outline-none sm:text-[15px] ${
+                        rentalType === "monthly" ? "cursor-not-allowed" : ""
+                      }`}
                     />
                   </div>
                 </div>
               </ReservationField>
+
+              <div className="flex items-center border-t border-[#EEE8E3] p-[12px] lg:border-l lg:border-t-0">
+                <button
+                  type="button"
+                  onClick={handleSearch}
+                  className="flex h-[58px] w-full min-w-[132px] items-center justify-center gap-[9px] rounded-[10px] bg-[#ED1739] px-[25px] text-[13px] font-extrabold uppercase tracking-[.8px] text-white shadow-[0_10px_24px_rgba(237,23,57,.22)] transition hover:bg-[#CE1431] lg:w-auto"
+                >
+                  <SearchIcon />
+                  Ara
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-[26px] gap-y-[10px] border-t border-[#EEE8E3] px-[18px] py-[12px]">
-              <label className="flex cursor-pointer items-center gap-[8px] text-[9px] font-medium text-[#716965]">
+            <div className="flex flex-wrap items-center gap-x-[28px] gap-y-[10px] border-t border-[#EEE8E3] px-[18px] py-[13px]">
+              <label className="flex cursor-pointer items-center gap-[8px] text-[10px] font-semibold text-[#625A55]">
                 <input
                   type="checkbox"
                   checked={differentReturn}
                   onChange={(e) => setDifferentReturn(e.target.checked)}
-                  className="h-[14px] w-[14px] accent-[#ED1739]"
+                  className="h-[15px] w-[15px] accent-[#ED1739]"
                 />
                 Farklı bir noktaya iade etmek istiyorum
               </label>
@@ -510,12 +749,18 @@ export default function AraclarimizPage() {
               <button
                 type="button"
                 onClick={() => setPromoOpen(!promoOpen)}
-                className="text-[9px] font-medium text-[#716965] hover:text-[#ED1739]"
+                className="text-[10px] font-semibold text-[#625A55] hover:text-[#ED1739]"
               >
                 {promoOpen
                   ? "− Promosyon kodunu kapat"
                   : "+ Promosyon kodum var"}
               </button>
+
+              {searchMessage && (
+                <span className="ml-auto text-[9.5px] font-extrabold text-[#D71935]">
+                  {searchMessage}
+                </span>
+              )}
             </div>
 
             {(differentReturn || promoOpen) && (
@@ -527,7 +772,7 @@ export default function AraclarimizPage() {
                     <select
                       value={returnLocation}
                       onChange={(e) => setReturnLocation(e.target.value)}
-                      className="h-[44px] w-full rounded-[8px] border border-[#E5DDD7] bg-white px-[12px] text-[10px] font-semibold text-[#514A46] outline-none"
+                      className="h-[46px] w-full rounded-[8px] border border-[#E5DDD7] bg-white px-[12px] text-[11px] font-bold text-[#514A46] outline-none"
                     >
                       {locations.map((location) => (
                         <option key={location}>{location}</option>
@@ -545,7 +790,7 @@ export default function AraclarimizPage() {
                       value={promoCode}
                       onChange={(e) => setPromoCode(e.target.value)}
                       placeholder="Promosyon kodunuzu girin"
-                      className="h-[44px] w-full rounded-[8px] border border-[#E5DDD7] bg-white px-[12px] text-[10px] font-medium text-[#514A46] outline-none"
+                      className="h-[46px] w-full rounded-[8px] border border-[#E5DDD7] bg-white px-[12px] text-[11px] font-semibold text-[#514A46] outline-none"
                     />
                   </div>
                 )}
@@ -586,16 +831,22 @@ export default function AraclarimizPage() {
       </section>
 
       {/* ARAÇLAR */}
-      <section className="bg-[#FBF9F6] pb-[65px] pt-[27px]">
+      <section
+        id="arac-listesi"
+        className="scroll-mt-[20px] bg-[#FBF9F6] pb-[65px] pt-[27px]"
+      >
         <div className="mx-auto max-w-[1340px] px-5 sm:px-6">
-          <div className="mb-[19px] flex items-center justify-between gap-4">
+          <div className="mb-[19px] flex flex-wrap items-end justify-between gap-4">
             <div>
               <h2 className="text-[20px] font-extrabold tracking-[-.6px] text-[#393431]">
                 Araçlarımız
               </h2>
 
-              <p className="mt-[3px] text-[9px] font-medium text-[#928984]">
-                {filteredVehicles.length} araç gösteriliyor
+              <p className="mt-[3px] text-[10px] font-semibold text-[#817974]">
+                {filteredVehicles.length} araç gösteriliyor ·{" "}
+                {rentalType === "daily"
+                  ? `${rentalDays} günlük kiralama`
+                  : `${monthlyCount} aylık kiralama`}
               </p>
             </div>
 
@@ -609,7 +860,7 @@ export default function AraclarimizPage() {
                   setTransmissionFilter("Tümü");
                   setFuelFilter("Tümü");
                 }}
-                className="text-[9px] font-bold text-[#ED1739]"
+                className="text-[10px] font-extrabold text-[#ED1739]"
               >
                 Filtreleri Temizle
               </button>
@@ -619,7 +870,13 @@ export default function AraclarimizPage() {
           {filteredVehicles.length > 0 ? (
             <div className="grid gap-[18px] md:grid-cols-2 xl:grid-cols-3">
               {filteredVehicles.map((vehicle) => (
-                <VehicleCard key={vehicle.id} vehicle={vehicle} />
+                <VehicleCard
+                  key={vehicle.id}
+                  vehicle={vehicle}
+                  rentalType={rentalType}
+                  rentalDays={rentalDays}
+                  monthlyCount={monthlyCount}
+                />
               ))}
             </div>
           ) : (
@@ -645,7 +902,7 @@ export default function AraclarimizPage() {
       </section>
 
       {/* BİLGİ */}
-      <section className="border-t border-[#EEE8E3] bg-white py-[35px]">
+      <section className="border-t border-[#EEE8E3] bg-white py-[38px]">
         <div className="mx-auto max-w-[1340px] px-5 sm:px-6">
           <div className="grid gap-[12px] sm:grid-cols-2 lg:grid-cols-4">
             <InfoBox
@@ -776,18 +1033,28 @@ export default function AraclarimizPage() {
 
         .field-label {
           display: block;
-          margin-bottom: 7px;
-          color: #978e88;
-          font-size: 7.8px;
-          font-weight: 700;
-          letter-spacing: 1.1px;
+          margin-bottom: 8px;
+          color: #817974;
+          font-size: 8.5px;
+          font-weight: 800;
+          letter-spacing: 1.15px;
           text-transform: uppercase;
+        }
+
+        .date-time-input {
+          min-height: 25px;
+          color: #403a36;
         }
 
         input[type="date"]::-webkit-calendar-picker-indicator,
         input[type="time"]::-webkit-calendar-picker-indicator {
           cursor: pointer;
-          opacity: 0.5;
+          opacity: 0.7;
+        }
+
+        input:disabled {
+          opacity: 1;
+          -webkit-text-fill-color: #403a36;
         }
       `}</style>
     </main>
@@ -842,18 +1109,12 @@ function MobileNav({
 function ReservationField({
   label,
   children,
-  last = false,
 }: {
   label: string;
   children: React.ReactNode;
-  last?: boolean;
 }) {
   return (
-    <div
-      className={`min-h-[82px] px-[19px] py-[18px] ${
-        last ? "" : "border-b border-[#EEE8E3] lg:border-b-0 lg:border-r"
-      }`}
-    >
+    <div className="min-h-[88px] border-b border-[#EEE8E3] px-[19px] py-[18px] lg:border-b-0 lg:border-r">
       <label className="field-label">{label}</label>
       {children}
     </div>
@@ -879,7 +1140,7 @@ function FilterSelect({
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="h-[44px] w-full appearance-none rounded-[8px] border border-[#E8E1DC] bg-[#FCFAF8] px-[12px] pr-[35px] text-[10px] font-bold text-[#514A46] outline-none focus:border-[#ED1739]/40"
+          className="h-[48px] w-full appearance-none rounded-[8px] border border-[#E8E1DC] bg-[#FCFAF8] px-[13px] pr-[35px] text-[11.5px] font-extrabold text-[#514A46] outline-none focus:border-[#ED1739]/40"
         >
           {options.map((option) => (
             <option key={option}>{option}</option>
@@ -898,7 +1159,17 @@ function FilterSelect({
 /* VEHICLE CARD                     */
 /* -------------------------------- */
 
-function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
+function VehicleCard({
+  vehicle,
+  rentalType,
+  rentalDays,
+  monthlyCount,
+}: {
+  vehicle: Vehicle;
+  rentalType: "daily" | "monthly";
+  rentalDays: number;
+  monthlyCount: number;
+}) {
   const [imageIndex, setImageIndex] = useState(0);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -920,7 +1191,6 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
 
   return (
     <article className="group overflow-hidden rounded-[17px] border border-[#E9E2DD] bg-white shadow-[0_8px_28px_rgba(73,54,45,.045)] transition duration-300 hover:-translate-y-[3px] hover:shadow-[0_18px_42px_rgba(73,54,45,.08)]">
-      {/* ÜST BİLGİ */}
       <div className="flex items-start justify-between gap-3 px-[19px] pb-[8px] pt-[18px]">
         <div>
           <span className="text-[7.5px] font-bold uppercase tracking-[1.5px] text-[#D71935]">
@@ -941,7 +1211,6 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
         </span>
       </div>
 
-      {/* ARAÇ GÖRSELİ */}
       <div className="relative mx-[10px] flex h-[205px] items-center justify-center overflow-hidden rounded-[12px] bg-[#F8F5F2] p-[12px]">
         {!imageError ? (
           <img
@@ -1001,7 +1270,6 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
         )}
       </div>
 
-      {/* ÖZELLİKLER */}
       <div className="px-[19px] pt-[16px]">
         <div className="grid grid-cols-3 overflow-hidden rounded-[9px] border border-[#EEE8E3] bg-[#FCFAF8]">
           <VehicleSpec label="Vites" value={vehicle.transmission} />
@@ -1011,41 +1279,85 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
       </div>
 
       {/* FİYATLAR */}
-      <div className="grid grid-cols-2 gap-[9px] px-[19px] pt-[14px]">
-        <div className="rounded-[10px] bg-[#FFF0F2] px-[13px] py-[12px]">
-          <span className="block text-[7px] font-extrabold uppercase tracking-[1px] text-[#D71935]">
-            Hemen Öde
-          </span>
+      <div className="px-[19px] pt-[15px]">
+        {rentalType === "daily" ? (
+          <div className="grid grid-cols-2 gap-[9px]">
+            <div className="rounded-[11px] border border-[#F1D5DA] bg-[#FFF0F2] px-[14px] py-[14px]">
+              <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#D71935]">
+                Hemen Öde
+              </span>
+              <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
+                {formatMoney(vehicle.onlinePrice * rentalDays)}
+              </strong>
+              <span className="mt-[4px] block text-[10px] font-extrabold text-[#D71935]">
+                {rentalDays} Gün Toplam
+              </span>
+              <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
+                {formatMoney(vehicle.onlinePrice)} / gün
+              </span>
+            </div>
 
-          <div className="mt-[4px] flex items-end gap-[3px]">
-            <strong className="text-[18px] font-extrabold tracking-[-.5px] text-[#332F2C]">
-              {vehicle.onlinePrice}
-            </strong>
-
-            <span className="mb-[2px] text-[7px] font-medium text-[#928984]">
-              / gün
-            </span>
+            <div className="rounded-[11px] border border-[#E9E2DD] bg-white px-[14px] py-[14px]">
+              <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#817974]">
+                Ofiste Öde
+              </span>
+              <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
+                {formatMoney(vehicle.officePrice * rentalDays)}
+              </strong>
+              <span className="mt-[4px] block text-[10px] font-extrabold text-[#625A55]">
+                {rentalDays} Gün Toplam
+              </span>
+              <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
+                {formatMoney(vehicle.officePrice)} / gün
+              </span>
+            </div>
           </div>
-        </div>
+        ) : (
+          <>
+            <div className="mb-[9px] flex items-center justify-between rounded-[9px] bg-[#ED1739] px-[13px] py-[9px] text-white">
+              <span className="text-[9px] font-extrabold uppercase tracking-[.9px]">
+                Aylık Özel Fiyat
+              </span>
+              <span className="rounded-full bg-white/15 px-[8px] py-[4px] text-[8px] font-extrabold uppercase">
+                İndirimli
+              </span>
+            </div>
 
-        <div className="rounded-[10px] border border-[#E9E2DD] bg-white px-[13px] py-[12px]">
-          <span className="block text-[7px] font-extrabold uppercase tracking-[1px] text-[#817974]">
-            Ofiste Öde
-          </span>
+            <div className="grid grid-cols-2 gap-[9px]">
+              <div className="rounded-[11px] border border-[#F1D5DA] bg-[#FFF0F2] px-[14px] py-[14px]">
+                <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#D71935]">
+                  Hemen Öde
+                </span>
+                <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
+                  {formatMoney(vehicle.monthlyOnlinePrice * monthlyCount)}
+                </strong>
+                <span className="mt-[4px] block text-[10px] font-extrabold text-[#D71935]">
+                  {monthlyCount} Ay Toplam
+                </span>
+                <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
+                  {formatMoney(vehicle.monthlyOnlinePrice)} / ay
+                </span>
+              </div>
 
-          <div className="mt-[4px] flex items-end gap-[3px]">
-            <strong className="text-[18px] font-extrabold tracking-[-.5px] text-[#332F2C]">
-              {vehicle.officePrice}
-            </strong>
-
-            <span className="mb-[2px] text-[7px] font-medium text-[#928984]">
-              / gün
-            </span>
-          </div>
-        </div>
+              <div className="rounded-[11px] border border-[#E9E2DD] bg-white px-[14px] py-[14px]">
+                <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#817974]">
+                  Ofiste Öde
+                </span>
+                <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
+                  {formatMoney(vehicle.monthlyOfficePrice * monthlyCount)}
+                </strong>
+                <span className="mt-[4px] block text-[10px] font-extrabold text-[#625A55]">
+                  {monthlyCount} Ay Toplam
+                </span>
+                <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
+                  {formatMoney(vehicle.monthlyOfficePrice)} / ay
+                </span>
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
-      {/* DETAY BUTONU */}
       <div className="px-[19px] pt-[14px]">
         <button
           type="button"
@@ -1072,7 +1384,6 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
         </button>
       </div>
 
-      {/* AÇILAN DETAY */}
       {detailsOpen && (
         <div className="mx-[19px] mt-[13px] rounded-[11px] border border-[#E9E2DD] bg-[#FCFAF8] p-[14px]">
           <div className="grid grid-cols-2 gap-[9px]">
@@ -1091,7 +1402,10 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
               value={`${vehicle.dailyKm} KM`}
             />
 
-            <DetailBox label="Depozito" value={vehicle.deposit} />
+            <DetailBox
+              label="Depozito"
+              value={formatMoney(vehicle.deposit)}
+            />
           </div>
 
           <div className="mt-[11px] rounded-[8px] bg-white px-[11px] py-[10px]">
@@ -1104,7 +1418,6 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
         </div>
       )}
 
-      {/* BUTONLAR */}
       <div className="grid grid-cols-[.72fr_1.28fr] gap-[8px] p-[19px] pt-[14px]">
         <button
           type="button"
@@ -1203,18 +1516,18 @@ function InfoBox({
   text: string;
 }) {
   return (
-    <div className="rounded-[12px] border border-[#EEE8E3] bg-[#FDFCFB] px-[16px] py-[16px]">
-      <div className="flex items-center gap-[8px]">
-        <span className="flex h-[21px] w-[21px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
+    <div className="rounded-[14px] border border-[#E9E2DD] bg-[#FDFCFB] px-[20px] py-[21px]">
+      <div className="flex items-center gap-[11px]">
+        <span className="flex h-[31px] w-[31px] shrink-0 items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
           <CheckIcon />
         </span>
 
-        <h3 className="text-[10px] font-extrabold text-[#514A46]">
+        <h3 className="text-[14px] font-extrabold text-[#403A36]">
           {title}
         </h3>
       </div>
 
-      <p className="mt-[7px] text-[8.5px] font-medium leading-[1.65] text-[#918883]">
+      <p className="mt-[10px] text-[12px] font-bold leading-[1.65] text-[#6F6762]">
         {text}
       </p>
     </div>
@@ -1243,8 +1556,8 @@ function PhoneIcon() {
 function LocationIcon() {
   return (
     <svg
-      width="16"
-      height="16"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -1259,12 +1572,12 @@ function LocationIcon() {
 function CalendarIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="#ED1739"
-      strokeWidth="1.8"
+      strokeWidth="2"
       className="shrink-0"
     >
       <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -1276,16 +1589,34 @@ function CalendarIcon() {
 function ClockIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       stroke="#ED1739"
-      strokeWidth="1.8"
+      strokeWidth="2"
       className="shrink-0"
     >
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7v5l3 2" />
+    </svg>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-4-4" />
     </svg>
   );
 }
@@ -1324,8 +1655,8 @@ function ArrowIcon() {
 function CheckIcon() {
   return (
     <svg
-      width="10"
-      height="10"
+      width="11"
+      height="11"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
