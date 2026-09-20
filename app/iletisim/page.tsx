@@ -17,12 +17,45 @@ const whatsappUrl =
 export default function IletisimPage() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSending(true);
+    setErrorMessage("");
 
-    // E-posta sistemi bağlandığında burada API'ye gönderilecek.
-    setSent(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/iletisim", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          adSoyad: formData.get("adSoyad"),
+          telefon: formData.get("telefon"),
+          email: formData.get("email"),
+          konu: formData.get("konu"),
+          mesaj: formData.get("mesaj"),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Mesaj gönderilemedi.");
+      }
+
+      form.reset();
+      setSent(true);
+    } catch {
+      setErrorMessage(
+        "Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyin veya bizi telefonla arayın."
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -248,12 +281,11 @@ export default function IletisimPage() {
                   </div>
 
                   <h2 className="mt-[18px] text-[21px] font-extrabold text-[#332F2C]">
-                    Mesajınız hazır.
+                    Mesajınız gönderildi.
                   </h2>
 
                   <p className="mt-[8px] max-w-[390px] text-[13px] font-medium leading-[1.7] text-[#817974]">
-                    Mesaj formunun e-posta sistemini bir sonraki aşamada
-                    bağlayacağız.
+                    Mesajınız bize ulaştı. En kısa sürede sizinle iletişime geçeceğiz.
                   </p>
 
                   <button
@@ -281,6 +313,7 @@ export default function IletisimPage() {
                         <input
                           required
                           type="text"
+                          name="adSoyad"
                           placeholder="Ad Soyad"
                           className="form-input"
                         />
@@ -290,6 +323,7 @@ export default function IletisimPage() {
                         <input
                           required
                           type="tel"
+                          name="telefon"
                           placeholder="05xx xxx xx xx"
                           className="form-input"
                         />
@@ -299,6 +333,7 @@ export default function IletisimPage() {
                         <input
                           required
                           type="email"
+                          name="email"
                           placeholder="ornek@email.com"
                           className="form-input"
                         />
@@ -307,6 +342,7 @@ export default function IletisimPage() {
                       <FormField label="Konu">
                         <select
                           required
+                          name="konu"
                           defaultValue=""
                           className="form-input"
                         >
@@ -327,6 +363,7 @@ export default function IletisimPage() {
                       <FormField label="Mesajınız">
                         <textarea
                           required
+                          name="mesaj"
                           rows={5}
                           placeholder="Talebinizi kısaca yazabilirsiniz..."
                           className="form-input min-h-[110px] resize-none py-[12px]"
@@ -336,11 +373,18 @@ export default function IletisimPage() {
 
                     <button
                       type="submit"
-                      className="mt-[16px] flex h-[44px] w-full items-center justify-center gap-[8px] rounded-[8px] bg-[#ED1739] px-[22px] text-[12px] font-bold text-white shadow-[0_7px_17px_rgba(237,23,57,.16)] transition hover:bg-[#CE1431]"
+                      disabled={sending}
+                      className="mt-[16px] flex h-[44px] w-full items-center justify-center gap-[8px] rounded-[8px] bg-[#ED1739] px-[22px] text-[12px] font-bold text-white shadow-[0_7px_17px_rgba(237,23,57,.16)] transition hover:bg-[#CE1431] disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      Mesajı Gönder
-                      <ArrowIcon />
+                      {sending ? "Gönderiliyor..." : "Mesajı Gönder"}
+                      {!sending && <ArrowIcon />}
                     </button>
+
+                    {errorMessage && (
+                      <p className="mt-[10px] text-center text-[10px] font-bold leading-[1.5] text-[#D71935]">
+                        {errorMessage}
+                      </p>
+                    )}
 
                     <p className="mt-[10px] text-center text-[10px] font-medium leading-[1.5] text-[#9A928D]">
                       Bilgileriniz yalnızca talebinizle ilgili iletişim
