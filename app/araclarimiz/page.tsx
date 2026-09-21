@@ -352,10 +352,20 @@ export default function AraclarimizPage() {
       return;
     }
 
+    // Günlük kiralamada kullanıcı alış/iade tarihlerini serbestçe seçer.
+    // Mevcut iade tarihi yeni alış tarihinden sonraysa iade tarihini koru.
+    if (returnDate) {
+      const selected = new Date(`${value}T12:00:00`);
+      const currentReturn = new Date(`${returnDate}T12:00:00`);
+
+      if (currentReturn > selected) {
+        return;
+      }
+    }
+
     const selected = new Date(`${value}T12:00:00`);
     const newReturnDate = new Date(selected);
     newReturnDate.setDate(selected.getDate() + 3);
-
     setReturnDate(formatDate(newReturnDate));
   }
 
