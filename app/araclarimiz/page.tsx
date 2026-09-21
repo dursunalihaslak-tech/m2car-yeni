@@ -705,10 +705,7 @@ export default function AraclarimizPage() {
                         setReturnDate(e.target.value);
                         setSearchMessage("");
                       }}
-                      disabled={rentalType === "monthly"}
-                      className={`date-time-input min-w-0 w-full bg-transparent text-[15px] font-extrabold text-[#332F2C] outline-none sm:text-[16px] ${
-                        rentalType === "monthly" ? "cursor-not-allowed" : ""
-                      }`}
+                      className="date-time-input min-w-0 w-full bg-transparent text-[15px] font-extrabold text-[#332F2C] outline-none sm:text-[16px]"
                     />
                   </div>
 
@@ -724,10 +721,7 @@ export default function AraclarimizPage() {
                         setReturnTime(e.target.value);
                         setSearchMessage("");
                       }}
-                      disabled={rentalType === "monthly"}
-                      className={`date-time-input min-w-0 w-full bg-transparent text-[14px] font-extrabold text-[#332F2C] outline-none sm:text-[15px] ${
-                        rentalType === "monthly" ? "cursor-not-allowed" : ""
-                      }`}
+                      className="date-time-input min-w-0 w-full bg-transparent text-[14px] font-extrabold text-[#332F2C] outline-none sm:text-[15px]"
                     />
                   </div>
                 </div>
