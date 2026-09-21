@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "M2CAR | Araç Kiralama",
+  title: "M2CAR | İstanbul Araç Kiralama",
   description:
-    "Bireysel ve kurumsal ihtiyaçlarınıza uygun araç kiralama çözümleri.",
+    "Günlük, haftalık ve aylık araç kiralama seçenekleri. İstanbul genelinde ve havalimanlarında teslimat hizmetiyle ihtiyacınıza uygun aracı kolayca kiralayın.",
 
   icons: {
     icon: [
