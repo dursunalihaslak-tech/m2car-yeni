@@ -381,16 +381,17 @@ function Approach({
 function PhoneIcon() {
   return (
     <svg
-      width="16"
-      height="16"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3" />
+      <path d="M6.6 3.5 9 7.4a1.7 1.7 0 0 1-.3 2.1l-1.3 1.2a15.1 15.1 0 0 0 5.9 5.9l1.2-1.3a1.7 1.7 0 0 1 2.1-.3l3.9 2.4a1.7 1.7 0 0 1 .8 1.8l-.4 2a2 2 0 0 1-2 1.6C9.1 22.8 1.2 14.9 1.2 5.1a2 2 0 0 1 1.6-2l2-.4a1.7 1.7 0 0 1 1.8.8Z" />
     </svg>
   );
 }
