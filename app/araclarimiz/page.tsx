@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Manrope } from "next/font/google";
 import { useMemo, useState } from "react";
@@ -104,7 +104,7 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/fiorino-lpg.png", "/cars/fiorino-lpg-2.png"],
-    onlinePrice: 1999,
+    onlinePrice: 1749,
     officePrice: 2300,
     monthlyOnlinePrice: 42900,
     monthlyOfficePrice: 45900,
@@ -122,7 +122,7 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/fiorino-dizel.png"],
-    onlinePrice: 2199,
+    onlinePrice: 1849,
     officePrice: 2500,
     monthlyOnlinePrice: 46900,
     monthlyOfficePrice: 49900,
@@ -194,7 +194,7 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/egea-benzin.png"],
-    onlinePrice: 1949,
+    onlinePrice: 1649,
     officePrice: 2250,
     monthlyOnlinePrice: 41900,
     monthlyOfficePrice: 44900,
@@ -230,7 +230,7 @@ const vehicles: Vehicle[] = [
     transmission: "Manuel",
     passengers: "5 Kişi",
     images: ["/cars/egea-dizel-manuel.png"],
-    onlinePrice: 2149,
+    onlinePrice: 1899,
     officePrice: 2450,
     monthlyOnlinePrice: 45900,
     monthlyOfficePrice: 48900,
@@ -239,7 +239,7 @@ const vehicles: Vehicle[] = [
     dailyKm: 300,
     deposit: 7000,
   },
-];
+].sort((a, b) => a.onlinePrice - b.onlinePrice);
 
 function formatMoney(value: number) {
   return `${new Intl.NumberFormat("tr-TR").format(value)} TL`;
@@ -1435,7 +1435,7 @@ function VehicleCard({
           href="tel:08508888098"
           className="group flex h-[42px] items-center justify-center gap-[7px] rounded-[8px] bg-[#ED1739] px-[12px] text-[8.5px] font-bold text-white shadow-[0_7px_17px_rgba(237,23,57,.15)] transition hover:bg-[#CE1431]"
         >
-          Hemen Kirala
+          Rezervasyon İçin Ara
 
           <span className="transition-transform group-hover:translate-x-[2px]">
             <ArrowIcon />
@@ -1733,3 +1733,5 @@ function MenuIcon() {
     </svg>
   );
 }
+
+

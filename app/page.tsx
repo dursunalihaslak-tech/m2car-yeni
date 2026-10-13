@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Manrope } from "next/font/google";
 import { useState } from "react";
@@ -64,8 +64,8 @@ export default function Home() {
     <main
       className={`${manrope.className} min-h-screen overflow-x-hidden bg-[#FBF9F6] text-[#332F2C]`}
     >
-      {/* HEADER */}
-      <header className="relative z-50 border-t-2 border-[#ED1739] border-b border-[#EEE8E3] bg-white">
+      <div className="h-[82px]" aria-hidden="true"></div>{/* HEADER */}
+      <header className="fixed inset-x-0 top-0 z-[100] border-t-2 border-[#ED1739] border-b border-[#EEE8E3] bg-white">
         <div className="mx-auto flex h-[82px] max-w-[1340px] items-center px-5 sm:px-6">
           {/* LOGO */}
           <a
@@ -73,12 +73,12 @@ export default function Home() {
             aria-label="M2CAR Araç Kiralama"
             className="flex shrink-0 items-center"
           >
-            <div className="relative flex h-[64px] w-[165px] items-center justify-center overflow-hidden rounded-[12px] bg-[#ED1739] shadow-[0_8px_22px_rgba(237,23,57,.16)]">
+            <div className="relative flex h-[52px] w-[112px] items-center justify-center overflow-hidden rounded-[12px] sm:h-[64px] sm:w-[165px] bg-[#ED1739] shadow-[0_8px_22px_rgba(237,23,57,.16)]">
               <div className="text-center">
-                <div className="text-[26px] font-extrabold leading-none tracking-[-1.7px] text-white">
+                <div className="text-[21px] font-extrabold leading-none tracking-[-1.7px] text-white sm:text-[26px]">
                   M2CAR
                 </div>
-                <div className="mt-[7px] text-[7px] font-extrabold uppercase tracking-[2.3px] text-white/80">
+                <div className="mt-[5px] text-[5px] font-extrabold uppercase tracking-[1.4px] text-white/80 sm:mt-[7px] sm:text-[7px] sm:tracking-[2.3px]">
                   ARAÇ KİRALAMA
                 </div>
               </div>
@@ -99,17 +99,17 @@ export default function Home() {
 
           <a
             href="tel:08508888098"
-            className="ml-auto hidden shrink-0 items-center gap-[11px] xl:flex"
+            className="ml-auto flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-[11px]"
           >
-            <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
+            <span className="hidden h-[42px] w-[42px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739] sm:flex">
               <PhoneIcon />
             </span>
 
             <span>
-              <span className="block text-[9px] font-extrabold uppercase tracking-[1.4px] text-[#918883]">
+              <span className="relative block pl-[23px] text-[7px] font-extrabold uppercase tracking-[.5px] text-[#918883] sm:text-[9px] sm:tracking-[1.4px]"><span className="absolute left-0 top-[9px] text-[#ED1739]"><PhoneIcon /></span>
                 Rezervasyon Hattı
               </span>
-              <span className="mt-[2px] block text-[14px] font-extrabold text-[#332F2C]">
+              <span className="mt-[2px] block whitespace-nowrap pl-[23px] text-[11px] font-extrabold text-[#332F2C] sm:text-[14px]">
                 0850 888 80 98
               </span>
             </span>
@@ -118,7 +118,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => setMobileMenu(!mobileMenu)}
-            className="ml-auto flex h-[42px] w-[42px] items-center justify-center rounded-[9px] border border-[#E9E2DD] bg-white lg:hidden"
+            className="ml-2 flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[9px] border border-[#E9E2DD] bg-white lg:hidden"
             aria-label="Menü"
           >
             <MenuIcon />
@@ -149,54 +149,11 @@ export default function Home() {
           <div className="absolute right-[4%] top-[10px] h-[300px] w-[480px] rounded-full bg-[#FBE7E9]/40 blur-[110px]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1340px] px-5 pb-[31px] pt-[30px] sm:px-6">
-          {/* HERO ÜST */}
-          <div className="grid min-h-[270px] items-center gap-[30px] lg:grid-cols-[.82fr_1.18fr]">
-            {/* SOL */}
-            <div className="relative z-20 py-[25px] lg:pl-[15px]">
-              <div className="mb-[14px] flex items-center gap-[9px]">
-                <span className="h-[2px] w-[28px] rounded-full bg-[#ED1739]" />
-                <span className="text-[8px] font-extrabold uppercase tracking-[2px] text-[#D71935]">
-                  Araç Kiralama
-                </span>
-              </div>
-
-              <h1 className="max-w-[560px] text-[42px] font-extrabold leading-[1.03] tracking-[-2.2px] text-[#332F2C] sm:text-[49px] lg:text-[55px]">
-                Yola Çıkmanın
-                <span className="block text-[#ED1739]">En Kolay Yolu.</span>
-              </h1>
-
-              <p className="mt-[14px] max-w-[500px] text-[12px] font-semibold leading-[1.75] text-[#746C67]">
-                İhtiyacınıza uygun aracı seçin, rezervasyonunuzu kolayca
-                oluşturun ve yolculuğunuzu planlayın.
-              </p>
-            </div>
-
-            {/* SAĞ - HERO GÖRSELİ */}
-            <div className="relative hidden h-[270px] lg:block">
-              <div className="absolute inset-0 overflow-hidden rounded-[105px_18px_105px_18px] border border-[#EAE2DC] bg-[#F2ECE7] shadow-[0_18px_45px_rgba(72,52,43,.10)]">
-                <img
-                  src="/hero-road.png"
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover object-center"
-                />
-              </div>
-            </div>
-
-            {/* MOBİL HERO GÖRSELİ */}
-            <div className="relative h-[210px] overflow-hidden rounded-[55px_14px_55px_14px] border border-[#EAE2DC] bg-[#F2ECE7] shadow-[0_14px_35px_rgba(72,52,43,.08)] lg:hidden">
-              <img
-                src="/hero-road.png"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover object-center"
-              />
-            </div>
-          </div>
-
+        <div className="relative mx-auto max-w-[1340px] px-5 pb-[31px] pt-[16px] sm:px-6">
           {/* REZERVASYON */}
           <div
             id="rezervasyon"
-            className="relative z-20 mx-auto mt-[18px] max-w-[1220px]"
+            className="relative z-20 mx-auto mt-0 max-w-[1220px]"
           >
             <div className="mb-[10px] flex flex-col gap-3 px-[2px] sm:flex-row sm:items-end sm:justify-between">
               <div className="inline-flex w-fit items-center rounded-[11px] border border-[#E7DED8] bg-white p-[4px] shadow-[0_5px_18px_rgba(73,54,45,.05)]">
@@ -399,7 +356,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* KİRALAMA SEÇENEKLERİ */}
+      {/* ARAÇLAR */}
+<section className="bg-[#FBF9F6] py-[48px]">
+  <div className="mx-auto max-w-[1340px] px-5 sm:px-6">
+    <div className="text-center">
+      <SectionLabel center>Popüler Araçlar</SectionLabel>
+      <h2 className="mt-3 text-[30px] font-extrabold tracking-[-1px] text-[#332F2C] md:text-[36px]">
+        Sizin İçin <span className="text-[#ED1739]">Seçtiklerimiz</span>
+      </h2>
+      <p className="mt-2 text-[12px] font-semibold text-[#817974]">
+        En çok tercih edilen araçlarımızla yola hemen çıkın.
+      </p>
+    </div>
+
+    <div className="mt-8 grid gap-5 md:grid-cols-3">
+      {[
+        { category: "EKONOMİ", model: "Renault Clio", image: "/cars/clio.png", transmission: "Manuel", fuel: "Benzin", price: "1.650" },
+        { category: "KONFOR", model: "Renault Megane", image: "/cars/megane.png", transmission: "Otomatik", fuel: "Benzin", price: "2.549" },
+        { category: "SUV", model: "Peugeot 3008", image: "/cars/3008.png", transmission: "Otomatik", fuel: "Dizel", price: "3.299" }
+      ].map((car) => (
+        <article key={car.model} className="group overflow-hidden rounded-[20px] border border-[#EEE8E4] bg-white shadow-[0_10px_35px_rgba(50,38,35,.055)] transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="relative flex h-[230px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#F5F3F1] via-white to-[#FCECEF] px-4">
+            
+            <div className={`absolute right-3 top-3 z-10 max-w-[80%] rounded-xl border px-3 py-2 text-center text-[11px] font-black tracking-[.2px] shadow-lg sm:text-[12px] ${car.model.includes("Clio") ? "border-red-300 bg-gradient-to-r from-red-600 to-red-500 text-white" : car.model.includes("Megane") ? "border-[#FFC928] bg-gradient-to-r from-[#18120A] via-[#45300A] to-[#18120A] text-[#FFE16A] ring-2 ring-[#FFE8A3] shadow-[0_5px_18px_rgba(245,170,0,0.35)]" : "border-yellow-400 bg-gradient-to-r from-[#061B45] to-[#123F83] text-yellow-200"}`}>{car.model.includes("Clio") ? "⭐ EN UYGUN FİYAT" : car.model.includes("Megane") ? "⭐ EN ÇOK TERCİH EDİLEN" : "⭐ PREMIUM KONFOR"}</div><img src={car.image} alt={car.model} className="h-full w-full object-contain transition duration-500 group-hover:scale-105" />
+          </div>
+
+          <div className="p-5">
+            <h3 className="text-[21px] font-extrabold text-[#26252B]">{car.model}</h3>
+            <p className="mt-1 text-[10px] font-semibold text-[#918883]">veya benzeri</p>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {[car.transmission, car.fuel, "5 Kişi"].map((spec) => (
+                <span key={spec} className="rounded-lg border border-[#ECE9E7] bg-[#FAF9F8] px-3 py-2 text-[10px] font-bold text-[#514A46]">
+                  {spec}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-3 grid grid-cols-2 overflow-hidden rounded-[15px] border border-[#FF7B91] shadow-[0_6px_18px_rgba(237,23,57,0.16)]"><div className="flex min-w-0 items-center gap-[8px] bg-gradient-to-br from-[#FFE0E7] via-white to-[#FFC8D5] px-[10px] py-[15px]"><span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-[#FFDDE5] text-[#E90035]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.82 0L3 13V3h10l7.59 7.59a2 2 0 0 1 0 2.82Z"/><circle cx="7.5" cy="7.5" r="1"/></svg></span><span className="min-w-0"><span className="inline-block rounded-md bg-[#ED1739] px-[6px] py-[4px] text-[9px] font-black tracking-[.1px] text-white">GÜNLÜK FİYAT</span><span className="mt-[3px] block whitespace-nowrap text-[21px] font-black tracking-[-.7px] text-[#20212A] sm:text-[20px]">{car.price} TL</span></span></div><div className="flex min-w-0 items-center justify-between gap-[4px] bg-gradient-to-br from-[#D5E5FF] via-white to-[#B5D0FF] px-[10px] py-[15px]"><span className="min-w-0"><span className="inline-block rounded-md bg-[#1853CE] px-[6px] py-[4px] text-[9px] font-black tracking-[.1px] text-white">DEPOZİTO</span><span className="mt-[3px] block whitespace-nowrap text-[21px] font-black tracking-[-.7px] text-[#1853CE] sm:text-[20px]">7.000 TL</span></span><span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-[#DCEAFF] text-[#1853CE]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span></div></div><div className="mt-[9px] grid grid-cols-2 gap-[9px]"><a href="tel:08508888098" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#E90035] px-2 text-[14px] font-black text-white transition hover:bg-[#C9002D]"><PhoneIcon />Hemen Ara</a><a href={`https://wa.me/905336027805?text=${encodeURIComponent(`Merhaba, ${car.model} ${car.transmission} için kiralama bilgisi almak istiyorum.`)}`} target="_blank" rel="noopener noreferrer" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#0BBE61] px-2 text-[14px] font-black text-white transition hover:bg-[#08A651]"><svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true" className="shrink-0"><path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.9 31l7.6-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.4Zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.4 3.6 1.6 3.8c.2.2 2.7 4.1 6.5 5.7.9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg><span>WhatsApp</span></a></div><a href="/araclarimiz" className="mt-3 flex items-center justify-center gap-2 text-[10px] font-extrabold text-[#514A46] hover:text-[#ED1739]">
+              Detayları İncele <ArrowIcon />
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div className="mt-8 flex justify-center">
+      <a href="/araclarimiz" className="flex h-[48px] items-center gap-3 rounded-xl border border-[#ED1739] bg-white px-8 text-[12px] font-extrabold text-[#ED1739] transition hover:bg-[#FFF0F2]">
+        Tüm Araçları Gör <ArrowIcon />
+      </a>
+    </div>
+  </div>
+</section>
+{/* KİRALAMA SEÇENEKLERİ */}
       <section className="bg-[#FBF9F6] py-[42px]">
         <div className="mx-auto max-w-[1340px] px-5 sm:px-6">
           <div className="mb-[24px] flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -545,60 +554,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ARAÇLAR */}
-      <section className="bg-[#FBF9F6] py-[48px]">
-        <div className="mx-auto max-w-[1340px] px-5 sm:px-6">
-          <div className="text-center">
-            <SectionLabel center>Araçlarımız</SectionLabel>
-
-            <h2 className="mt-[9px] text-[30px] font-extrabold tracking-[-1px] text-[#332F2C] md:text-[34px]">
-              Yolculuğunuza uygun aracı bulun.
-            </h2>
-
-            <p className="mx-auto mt-[8px] max-w-[570px] text-[11px] font-semibold leading-[1.7] text-[#817974]">
-              Ekonomik sınıftan SUV seçeneklerine kadar farklı kullanım
-              ihtiyaçlarına uygun araç gruplarını keşfedin.
-            </p>
-          </div>
-
-          <div className="mt-[27px] grid gap-[16px] md:grid-cols-3">
-            <VehicleCard
-              category="Ekonomi"
-              model="Renault Clio"
-              image="/cars/clio.png"
-              transmission="Otomatik"
-              fuel="Benzin"
-            />
-
-            <VehicleCard
-              category="Konfor"
-              model="Renault Megane"
-              image="/cars/megane.png"
-              transmission="Otomatik"
-              fuel="Benzin"
-            />
-
-            <VehicleCard
-              category="SUV"
-              model="Peugeot 3008"
-              image="/cars/3008.png"
-              transmission="Otomatik"
-              fuel="Dizel"
-            />
-          </div>
-
-          <div className="mt-[25px] flex justify-center">
-            <a
-              href="/araclarimiz"
-              className="flex h-[44px] items-center gap-[8px] rounded-[8px] border border-[#DDD5CF] bg-white px-[20px] text-[10px] font-extrabold text-[#514A46] transition hover:border-[#ED1739] hover:text-[#ED1739]"
-            >
-              Tüm Araçları Gör
-              <ArrowIcon />
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* KOLAY REZERVASYON */}
       <section className="border-t border-[#EEE7E2] bg-[#FBF9F6] py-[44px]">
         <div className="mx-auto max-w-[1340px] px-5 sm:px-6">
@@ -647,7 +602,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+              {/* SABIT ILETISIM BUTONLARI */}
+        <div className="pointer-events-none fixed inset-x-0 bottom-[max(16px,env(safe-area-inset-bottom))] z-[60] flex items-end justify-between px-4 lg:hidden">
+          <a
+            href="tel:08508888098"
+            aria-label="Bizi Arayın - 0850 888 80 98"
+            className="pointer-events-auto flex flex-col items-center gap-1"
+          >
+            <span className="flex h-[56px] w-[56px] items-center justify-center rounded-[17px] bg-[#ED1739] text-white shadow-lg">
+              <PhoneIcon />
+            </span>
+            <span className="rounded-full bg-[#332F2C] px-2 py-1 text-[10px] font-bold text-white">
+              Bizi Arayın
+            </span>
+          </a>
+          <a
+            href="https://wa.me/905336027805"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp ile iletişim"
+            className="pointer-events-auto flex flex-col items-center gap-1"
+          >
+            <span className="flex h-[56px] w-[56px] items-center justify-center rounded-[17px] bg-[#20C765] text-white shadow-lg">
+              <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>
+                <path d="M9 9c.5 3 2 4.5 5 5l1.5-1.5 2 1c-.5 2-1.5 3-3.5 3-4 0-7.5-3.5-7.5-7.5 0-2 1-3 3-3l1 2L9 9Z"/>
+              </svg>
+            </span>
+            <span className="rounded-full bg-[#332F2C] px-2 py-1 text-[10px] font-bold text-white">
+              WhatsApp
+            </span>
+          </a>
+        </div>
+        {/* FOOTER */}
       <footer className="border-t border-[#E7DFD9] bg-[#F8F5F1]">
         <div className="mx-auto max-w-[1340px] px-5 py-[42px] sm:px-6 lg:py-[48px]">
           <div className="grid gap-[36px] sm:grid-cols-2 lg:grid-cols-[1.45fr_.85fr_1fr_1.15fr] lg:gap-[55px]">
@@ -1418,3 +1405,6 @@ function CheckIcon() {
     </svg>
   );
 }
+
+
+

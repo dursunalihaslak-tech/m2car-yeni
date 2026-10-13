@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResend = () => new Resend(process.env.RESEND_API_KEY || "re_placeholder");
 
 function escapeHtml(value: unknown) {
   return String(value ?? "")
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "M2CAR Web Sitesi <web@m2car.com.tr>",
       to: ["info@m2car.com.tr"],
       replyTo: email,
