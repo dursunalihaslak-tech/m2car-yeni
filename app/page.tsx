@@ -106,10 +106,10 @@ export default function Home() {
             </span>
 
             <span>
-              <span className="relative block pl-[23px] text-[7px] font-extrabold uppercase tracking-[.5px] text-[#918883] sm:text-[9px] sm:tracking-[1.4px]"><span className="absolute left-0 top-[9px] text-[#ED1739]"><PhoneIcon /></span>
+              <span className="relative block text-[7px] font-extrabold uppercase tracking-[.5px] text-[#918883] sm:text-[9px] sm:tracking-[1.4px]">
                 Rezervasyon Hattı
               </span>
-              <span className="mt-[2px] block whitespace-nowrap pl-[23px] text-[11px] font-extrabold text-[#332F2C] sm:text-[14px]">
+              <span className="mt-[2px] block whitespace-nowrap text-[11px] font-extrabold text-[#332F2C] sm:text-[14px]">
                 0850 888 80 98
               </span>
             </span>
@@ -1405,6 +1405,8 @@ function CheckIcon() {
     </svg>
   );
 }
+
+
 
 
 
