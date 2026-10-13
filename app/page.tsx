@@ -397,12 +397,12 @@ export default function Home() {
 
   {/* TURUNCU GUNLUK FIYAT ALANI */}
   <div
-    className="absolute inset-y-0 left-0 w-[53%] bg-gradient-to-br from-[#FF9500] via-[#FF7600] to-[#FF4D00]"
+    className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-br from-[#FF9500] via-[#FF7600] to-[#FF4D00]"
     style={{ clipPath: "polygon(0 0, 100% 0, 87% 100%, 0 100%)" }}
   />
 
   {/* GUNLUK FIYAT */}
-  <div className="relative z-10 flex w-1/2 min-w-0 items-center gap-[7px] pl-[10px] pr-[2px] text-white">
+  <div className="relative z-10 flex w-1/2 min-w-0 items-center gap-[5px] pl-[8px] pr-[2px] text-white">
     <span className="flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-full bg-white/20">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.82 0L3 13V3h10l7.59 7.59a2 2 0 0 1 0 2.82Z"/>
@@ -415,7 +415,7 @@ export default function Home() {
         GÜNLÜK FİYAT
       </div>
       <div
-        className="mt-[3px] whitespace-nowrap text-[22px] font-black leading-none tracking-[-0.9px] sm:text-[25px]"
+        className="mt-[3px] whitespace-nowrap text-[20px] font-black leading-none tracking-[-0.9px] sm:text-[22px]"
         style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900 }}
       >
         {car.price} TL
@@ -440,7 +440,7 @@ export default function Home() {
         className="mt-[3px] whitespace-nowrap text-[22px] font-black leading-none tracking-[-0.9px] text-[#171B24] sm:text-[25px]"
         style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900 }}
       >
-        {car.model.includes("Clio") ? "5.000 TL" : car.model.includes("3008") ? "10.000 TL" : "7.000 TL"}
+        {car.model.includes("Clio") ? "5.000 TL" : "7.000 TL"}
       </div>
     </div>
   </div>
@@ -1458,6 +1458,7 @@ function CheckIcon() {
     </svg>
   );
 }
+
 
 
 
