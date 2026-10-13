@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Manrope } from "next/font/google";
 import { useState } from "react";
@@ -393,7 +393,60 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-3 grid grid-cols-2 overflow-hidden rounded-[15px] border border-[#FF7B91] shadow-[0_6px_18px_rgba(237,23,57,0.16)]"><div className="flex min-w-0 items-center gap-[8px] bg-gradient-to-br from-[#FFE0E7] via-white to-[#FFC8D5] px-[10px] py-[15px]"><span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-[#FFDDE5] text-[#E90035]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.82 0L3 13V3h10l7.59 7.59a2 2 0 0 1 0 2.82Z"/><circle cx="7.5" cy="7.5" r="1"/></svg></span><span className="min-w-0"><span className="inline-block rounded-md bg-[#ED1739] px-[6px] py-[4px] text-[9px] font-black tracking-[.1px] text-white">GÜNLÜK FİYAT</span><span className="mt-[3px] block whitespace-nowrap text-[21px] font-black tracking-[-.7px] text-[#20212A] sm:text-[20px]">{car.price} TL</span></span></div><div className="flex min-w-0 items-center justify-between gap-[4px] bg-gradient-to-br from-[#D5E5FF] via-white to-[#B5D0FF] px-[10px] py-[15px]"><span className="min-w-0"><span className="inline-block rounded-md bg-[#1853CE] px-[6px] py-[4px] text-[9px] font-black tracking-[.1px] text-white">DEPOZİTO</span><span className="mt-[3px] block whitespace-nowrap text-[21px] font-black tracking-[-.7px] text-[#1853CE] sm:text-[20px]">7.000 TL</span></span><span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-[#DCEAFF] text-[#1853CE]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span></div></div><div className="mt-[9px] grid grid-cols-2 gap-[9px]"><a href="tel:08508888098" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#E90035] px-2 text-[14px] font-black text-white transition hover:bg-[#C9002D]"><PhoneIcon />Hemen Ara</a><a href={`https://wa.me/905336027805?text=${encodeURIComponent(`Merhaba, ${car.model} ${car.transmission} için kiralama bilgisi almak istiyorum.`)}`} target="_blank" rel="noopener noreferrer" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#0BBE61] px-2 text-[14px] font-black text-white transition hover:bg-[#08A651]"><svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true" className="shrink-0"><path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.9 31l7.6-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.4Zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.4 3.6 1.6 3.8c.2.2 2.7 4.1 6.5 5.7.9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg><span>WhatsApp</span></a></div><a href="/araclarimiz" className="mt-3 flex items-center justify-center gap-2 text-[10px] font-extrabold text-[#514A46] hover:text-[#ED1739]">
+            <div className="relative mt-3 flex h-[88px] overflow-hidden rounded-[14px] border border-[#FF9B3D] bg-gradient-to-br from-[#FFFCF7] to-[#FFE8CA] shadow-[0_5px_16px_rgba(255,120,0,0.12)]">
+
+  {/* TURUNCU GUNLUK FIYAT ALANI */}
+  <div
+    className="absolute inset-y-0 left-0 w-[53%] bg-gradient-to-br from-[#FF9500] via-[#FF7600] to-[#FF4D00]"
+    style={{ clipPath: "polygon(0 0, 100% 0, 87% 100%, 0 100%)" }}
+  />
+
+  {/* GUNLUK FIYAT */}
+  <div className="relative z-10 flex w-1/2 min-w-0 items-center gap-[7px] pl-[10px] pr-[2px] text-white">
+    <span className="flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-full bg-white/20">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.82 0L3 13V3h10l7.59 7.59a2 2 0 0 1 0 2.82Z"/>
+        <circle cx="7.5" cy="7.5" r="1"/>
+      </svg>
+    </span>
+
+    <div className="min-w-0">
+      <div className="whitespace-nowrap text-[10px] font-extrabold leading-[14px] tracking-[-0.2px]">
+        GÜNLÜK FİYAT
+      </div>
+      <div
+        className="mt-[3px] whitespace-nowrap text-[22px] font-black leading-none tracking-[-0.9px] sm:text-[25px]"
+        style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900 }}
+      >
+        {car.price} TL
+      </div>
+    </div>
+  </div>
+
+  {/* DEPOZITO */}
+  <div className="relative z-10 flex w-1/2 min-w-0 items-center gap-[7px] pl-[16px] pr-[5px]">
+    <span className="flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-full bg-white text-[#934B1C] shadow-sm">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+        <path d="m9 12 2 2 4-4"/>
+      </svg>
+    </span>
+
+    <div className="min-w-0">
+      <div className="whitespace-nowrap text-[10px] font-extrabold leading-[14px] tracking-[-0.2px] text-[#34302D]">
+        DEPOZİTO
+      </div>
+      <div
+        className="mt-[3px] whitespace-nowrap text-[22px] font-black leading-none tracking-[-0.9px] text-[#171B24] sm:text-[25px]"
+        style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900 }}
+      >
+        7.000 TL
+      </div>
+    </div>
+  </div>
+
+</div>
+<div className="mt-[9px] grid grid-cols-2 gap-[9px]"><a href="tel:08508888098" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#E90035] px-2 text-[14px] font-black text-white transition hover:bg-[#C9002D]"><PhoneIcon />Hemen Ara</a><a href={`https://wa.me/905336027805?text=${encodeURIComponent(`Merhaba, ${car.model} ${car.transmission} için kiralama bilgisi almak istiyorum.`)}`} target="_blank" rel="noopener noreferrer" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#0BBE61] px-2 text-[14px] font-black text-white transition hover:bg-[#08A651]"><svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true" className="shrink-0"><path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.9 31l7.6-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.4Zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.4 3.6 1.6 3.8c.2.2 2.7 4.1 6.5 5.7.9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg><span>WhatsApp</span></a></div><a href="/araclarimiz" className="mt-3 flex items-center justify-center gap-2 text-[10px] font-extrabold text-[#514A46] hover:text-[#ED1739]">
               Detayları İncele <ArrowIcon />
             </a>
           </div>
