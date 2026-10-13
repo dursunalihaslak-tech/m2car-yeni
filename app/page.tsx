@@ -440,7 +440,7 @@ export default function Home() {
         className="mt-[3px] whitespace-nowrap text-[22px] font-black leading-none tracking-[-0.9px] text-[#171B24] sm:text-[25px]"
         style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900 }}
       >
-        7.000 TL
+        {car.model.includes("Clio") ? "5.000 TL" : car.model.includes("3008") ? "10.000 TL" : "7.000 TL"}
       </div>
     </div>
   </div>
