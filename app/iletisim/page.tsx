@@ -153,6 +153,7 @@ export default function IletisimPage() {
               <MobileNav href="/filo-talebi">Filo Talebi</MobileNav>
               <MobileNav href="/ek-hizmetler">Ek Hizmetler</MobileNav>
               <MobileNav href="/hakkimizda">Hakkımızda</MobileNav>
+            <MobileNav href="/iletisim">İletişim</MobileNav>
             </div>
           </div>
         )}

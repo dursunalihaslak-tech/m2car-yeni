@@ -464,6 +464,7 @@ export default function AraclarimizPage() {
             <Nav href="/filo-talebi">Filo Talebi</Nav>
             <Nav href="/ek-hizmetler">Ek Hizmetler</Nav>
             <Nav href="/hakkimizda">Hakkımızda</Nav>
+            <Nav href="/iletisim">İletişim</Nav>
             <a href="https://wa.me/905336027805" target="_blank" rel="noopener noreferrer" aria-label="M2CAR WhatsApp" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-3 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#1DA851]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="h-[17px] w-[17px]" aria-hidden="true"><path d="M16 .8A15.1 15.1 0 0 0 3 23.5L.9 31l7.7-2A15.2 15.2 0 1 0 16 .8Zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.3Zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg><span>WhatsApp</span></a>
           </nav>
 
@@ -518,6 +519,7 @@ export default function AraclarimizPage() {
               <MobileNav href="/filo-talebi">Filo Talebi</MobileNav>
               <MobileNav href="/ek-hizmetler">Ek Hizmetler</MobileNav>
               <MobileNav href="/hakkimizda">Hakkımızda</MobileNav>
+            <MobileNav href="/iletisim">İletişim</MobileNav>
 
               <a
                 href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
@@ -1339,7 +1341,7 @@ function VehicleCard({
             </div>
 
             <div className="grid grid-cols-3 gap-[6px] [&>div]:min-w-0">
-              <div className="rounded-[11px] border border-[#FF9E87] bg-[#FFF1EC] shadow-[0_3px_12px_rgba(255,100,65,0.10)] px-[8px] py-[12px]">
+              <div className="rounded-[11px] text-center border border-[#FF9E87] bg-[#FFF1EC] shadow-[0_3px_12px_rgba(255,100,65,0.10)] px-[8px] py-[12px]">
                 <span className="block text-[8px] font-extrabold uppercase tracking-[.3px] text-[#D71935]">
                   📋 STANDART AYLIK
                 </span>
@@ -1354,7 +1356,7 @@ function VehicleCard({
                 </span>
               </div>
 
-              <div className="rounded-[11px] border border-[#89C4FF] bg-[#EDF5FF] shadow-[0_3px_12px_rgba(30,110,240,0.10)] px-[8px] py-[12px]">
+              <div className="rounded-[11px] text-center border border-[#89C4FF] bg-[#EDF5FF] shadow-[0_3px_12px_rgba(30,110,240,0.10)] px-[8px] py-[12px]">
                 <span className="block text-center text-[9px] font-extrabold uppercase tracking-[.3px] text-[#1765B1]">AYLIK KAMPANYA</span><span className="mx-auto mt-[5px] block w-fit rounded-full bg-[#ED1739] px-[8px] py-[3px] text-center text-[9px] font-black text-white">%20 İNDİRİM</span>
                 <strong className="mt-[5px] block text-[clamp(13px,3.2vw,19px)] whitespace-nowrap font-extrabold tracking-[-.8px] text-[#332F2C]">
                   {formatMoney(vehicle.monthlyOnlinePrice * monthlyCount)}
@@ -1366,7 +1368,7 @@ function VehicleCard({
                   {formatMoney(vehicle.monthlyOnlinePrice)} / ay
                 </span>
               </div>
-<div className="rounded-[11px] border border-[#70D99C] bg-[#E9F9EF] shadow-[0_3px_12px_rgba(0,160,90,0.10)] px-[8px] py-[14px]"><span className="block text-[8px] font-extrabold uppercase text-[#16803C]">🛡️ Depozito</span><strong className="mt-[5px] block text-[clamp(12px,2.9vw,17px)] whitespace-nowrap font-extrabold text-[#16803C]">{formatMoney(vehicle.deposit)}</strong><span className="mt-[4px] block text-[9px] font-bold text-[#16803C]">İade Edilir</span></div>
+<div className="rounded-[11px] text-center border border-[#70D99C] bg-[#E9F9EF] shadow-[0_3px_12px_rgba(0,160,90,0.10)] px-[8px] py-[14px]"><span className="block text-[8px] font-extrabold uppercase text-[#16803C]">🛡️ Depozito</span><strong className="mt-[5px] block text-[clamp(12px,2.9vw,17px)] whitespace-nowrap font-extrabold text-[#16803C]">{formatMoney(vehicle.deposit)}</strong><span className="mt-[4px] block text-[9px] font-bold text-[#16803C]">İade Edilir</span></div>
             </div>
           </>
         )}
