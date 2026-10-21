@@ -270,7 +270,7 @@ function MobileNav({
   return (
     <a
       href={href}
-      className="border-b border-[#F1ECE8] pb-3 text-[12px] font-black text-[#514A46] transition hover:text-[#ED1739]"
+      className="border-b border-[#F1ECE8] pb-3 text-[13px] font-extrabold text-[#514A46] transition hover:text-[#ED1739]"
     >
       {children}
     </a>

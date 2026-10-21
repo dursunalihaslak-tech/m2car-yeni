@@ -1107,7 +1107,7 @@ function MobileNav({
   return (
     <a
       href={href}
-      className={`border-b border-[#F1ECE8] pb-3 text-[12px] font-bold last:border-0 ${
+      className={`border-b border-[#F1ECE8] pb-3 text-[13px] font-extrabold last:border-0 ${
         active ? "text-[#ED1739]" : "text-[#514A46]"
       }`}
     >
