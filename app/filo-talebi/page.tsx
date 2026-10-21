@@ -97,7 +97,7 @@ export default function FiloTalebiPage() {
           </a>
 
           {/* MENU */}
-          <nav className="hidden flex-1 items-center justify-center gap-[29px] lg:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-[12px] lg:flex">
             <Nav href="/">Ana Sayfa</Nav>
             <Nav href="/araclarimiz">Araçlarımız</Nav>
             <Nav href="/kampanyalar">Kampanyalar</Nav>
@@ -421,11 +421,7 @@ export default function FiloTalebiPage() {
           font-family: inherit;
         }
 
-        .nav-link {
-          position: relative;
-          color: #4b4541;
-          font-size: 15px;
-          font-weight: 900;
+        $1900;
           letter-spacing: -0.15px;
           white-space: nowrap;
           transition: color 180ms ease;
@@ -516,7 +512,7 @@ function Nav({
   return (
     <a
       href={href}
-      className={`nav-link !font-black ${active ? "active" : ""}`}
+      className={`nav-link !font-extrabold ${active ? "active" : ""}`}
     >
       {children}
     </a>

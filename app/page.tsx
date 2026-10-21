@@ -85,7 +85,7 @@ export default function Home() {
             </div>
           </a>
 
-          <nav className="hidden flex-1 items-center justify-center gap-[20px] lg:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-[12px] lg:flex">
             <Nav href="/" active>
               Ana Sayfa
             </Nav>
@@ -774,11 +774,7 @@ export default function Home() {
           font-family: inherit;
         }
 
-        .nav-link {
-          position: relative;
-          color: #3d3835;
-          font-size: 15px;
-          font-weight: 900;
+        $1900;
           line-height: 1;
           letter-spacing: -0.3px;
           white-space: nowrap;
@@ -879,7 +875,7 @@ function Nav({
   active?: boolean;
 }) {
   return (
-    <a href={href} className={`nav-link !font-black ${active ? "active" : ""}`}>
+    <a href={href} className={`nav-link !font-extrabold ${active ? "active" : ""}`}>
       {children}
     </a>
   );
