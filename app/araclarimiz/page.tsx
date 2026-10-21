@@ -1,5 +1,7 @@
-﻿"use client";
+"use client";
 
+
+import { FaWhatsapp } from 'react-icons/fa';
 import { Manrope } from "next/font/google";
 import { useMemo, useState } from "react";
 
@@ -57,7 +59,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 2,
@@ -93,7 +95,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 4,
@@ -111,7 +113,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 5,
@@ -129,7 +131,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 6,
@@ -147,7 +149,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 7,
@@ -165,7 +167,7 @@ const vehicles: Vehicle[] = [
     minAge: 23,
     licenseYears: 2,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 10000,
   },
   {
     id: 8,
@@ -183,7 +185,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 9,
@@ -201,7 +203,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 10,
@@ -219,7 +221,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
   {
     id: 11,
@@ -237,7 +239,7 @@ const vehicles: Vehicle[] = [
     minAge: 21,
     licenseYears: 1,
     dailyKm: 300,
-    deposit: 7000,
+    deposit: 5000,
   },
 ].sort((a, b) => a.onlinePrice - b.onlinePrice);
 
@@ -429,7 +431,9 @@ export default function AraclarimizPage() {
       className={`${manrope.className} min-h-screen overflow-x-hidden bg-[#FBF9F6] text-[#312D2B]`}
     >
       {/* HEADER */}
-      <header className="relative z-50 border-t-[2px] border-[#ED1739] border-b border-[#EEE8E3] bg-white">
+      {/* M2CAR-SABIT-MENU-BOSLUK */}
+      <div className="h-[76px]" aria-hidden="true" />
+      <header className="fixed top-0 inset-x-0 z-50 border-t-[2px] border-[#ED1739] border-b border-[#EEE8E3] bg-white">
         <div className="mx-auto flex h-[96px] max-w-[1340px] items-center px-5 sm:px-6">
           <a
             href="/"
@@ -460,12 +464,12 @@ export default function AraclarimizPage() {
             <Nav href="/filo-talebi">Filo Talebi</Nav>
             <Nav href="/ek-hizmetler">Ek Hizmetler</Nav>
             <Nav href="/hakkimizda">Hakkımızda</Nav>
-            <Nav href="/iletisim">İletişim</Nav>
+            <a href="https://wa.me/905336027805" target="_blank" rel="noopener noreferrer" aria-label="M2CAR WhatsApp" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-3 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#1DA851]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="h-[17px] w-[17px]" aria-hidden="true"><path d="M16 .8A15.1 15.1 0 0 0 3 23.5L.9 31l7.7-2A15.2 15.2 0 1 0 16 .8Zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.3Zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg><span>WhatsApp</span></a>
           </nav>
 
           <div className="ml-auto hidden shrink-0 xl:block">
             <a
-              href="tel:08508888098"
+              href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
               className="group flex items-center gap-[12px]"
             >
               <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
@@ -484,11 +488,20 @@ export default function AraclarimizPage() {
             </a>
           </div>
 
+          <a
+  href="https://wa.me/905336027805"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="M2CAR WhatsApp Mobil Ust"
+  className="ml-auto mr-3 flex h-[42px] px-3 shrink-0 items-center justify-center rounded-[10px] bg-[#25D366] text-white shadow-sm transition-colors hover:bg-[#1DA851] lg:hidden"
+>
+  <FaWhatsapp className="h-[24px] w-[24px]" />
+<span className="ml-2 text-[12px] font-semibold">WhatsApp</span></a>
           <button
             type="button"
             onClick={() => setMobileMenu(!mobileMenu)}
             aria-label="Menü"
-            className="ml-auto flex h-[42px] w-[42px] items-center justify-center rounded-[9px] border border-[#E9E2DD] bg-white text-[#4D4642] lg:hidden"
+            className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[9px] border border-[#E9E2DD] bg-white text-[#4D4642] lg:hidden"
           >
             <MenuIcon />
           </button>
@@ -505,10 +518,9 @@ export default function AraclarimizPage() {
               <MobileNav href="/filo-talebi">Filo Talebi</MobileNav>
               <MobileNav href="/ek-hizmetler">Ek Hizmetler</MobileNav>
               <MobileNav href="/hakkimizda">Hakkımızda</MobileNav>
-              <MobileNav href="/iletisim">İletişim</MobileNav>
 
               <a
-                href="tel:08508888098"
+                href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
                 className="mt-2 flex h-[47px] items-center justify-center rounded-[8px] bg-[#ED1739] text-[11px] font-bold text-white"
               >
                 0850 888 80 98
@@ -951,7 +963,7 @@ export default function AraclarimizPage() {
             </div>
 
             <a
-              href="tel:08508888098"
+              href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
               className="flex h-[47px] shrink-0 items-center justify-center gap-[8px] rounded-[8px] bg-[#ED1739] px-[22px] text-[9px] font-bold text-white hover:bg-[#CE1431]"
             >
               <PhoneIcon />
@@ -1007,8 +1019,8 @@ export default function AraclarimizPage() {
         .nav-link {
           position: relative;
           color: #514a46;
-          font-size: 12px;
-          font-weight: 700;
+          font-size: 15px;
+          font-weight: 900;
           letter-spacing: -0.15px;
           white-space: nowrap;
           transition: color 180ms ease;
@@ -1079,7 +1091,7 @@ function Nav({
   active?: boolean;
 }) {
   return (
-    <a href={href} className={`nav-link ${active ? "active" : ""}`}>
+    <a href={href} className={`nav-link !font-black ${active ? "active" : ""}`}>
       {children}
     </a>
   );
@@ -1197,7 +1209,7 @@ function VehicleCard({
     <article className="group overflow-hidden rounded-[17px] border border-[#E9E2DD] bg-white shadow-[0_8px_28px_rgba(73,54,45,.045)] transition duration-300 hover:-translate-y-[3px] hover:shadow-[0_18px_42px_rgba(73,54,45,.08)]">
       <div className="flex items-start justify-between gap-3 px-[19px] pb-[8px] pt-[18px]">
         <div>
-          <span className="text-[7.5px] font-bold uppercase tracking-[1.5px] text-[#D71935]">
+          <span className="text-[7.5px] font-black uppercase tracking-[1.5px] text-[#D71935]">
             {vehicle.category}
           </span>
 
@@ -1285,12 +1297,12 @@ function VehicleCard({
       {/* FİYATLAR */}
       <div className="px-[19px] pt-[15px]">
         {rentalType === "daily" ? (
-          <div className="grid grid-cols-2 gap-[9px]">
-            <div className="rounded-[11px] border border-[#F1D5DA] bg-[#FFF0F2] px-[14px] py-[14px]">
-              <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#D71935]">
-                Hemen Öde
+          <div className="grid grid-cols-3 gap-[6px] [&>div]:min-w-0">
+            <div className="rounded-[11px] border border-[#FF9E87] bg-[#FFF1EC] shadow-[0_3px_12px_rgba(255,100,65,0.10)] px-[8px] py-[12px] text-center">
+              <span className="block text-[8px] font-extrabold uppercase tracking-[.3px] text-[#D71935]">
+                ☀️ GÜNLÜK KİRALAMA
               </span>
-              <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
+              <strong className="mt-[5px] block text-[clamp(13px,3.2vw,19px)] whitespace-nowrap font-extrabold tracking-[-.8px] text-[#332F2C]">
                 {formatMoney(vehicle.onlinePrice * rentalDays)}
               </strong>
               <span className="mt-[4px] block text-[10px] font-extrabold text-[#D71935]">
@@ -1301,20 +1313,19 @@ function VehicleCard({
               </span>
             </div>
 
-            <div className="rounded-[11px] border border-[#E9E2DD] bg-white px-[14px] py-[14px]">
-              <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#817974]">
-                Ofiste Öde
-              </span>
-              <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
-                {formatMoney(vehicle.officePrice * rentalDays)}
+            <div className="rounded-[11px] border border-[#89C4FF] bg-[#EDF5FF] shadow-[0_3px_12px_rgba(30,110,240,0.10)] px-[8px] py-[12px] text-center">
+              <span className="block text-center text-[9px] font-extrabold uppercase tracking-[.3px] text-[#1765B1]">AYLIK KAMPANYA</span><span className="mx-auto mt-[5px] block w-fit rounded-full bg-[#ED1739] px-[8px] py-[3px] text-center text-[9px] font-black text-white">%20 İNDİRİM</span>
+              <strong className="mt-[7px] block text-center text-[clamp(13px,3.2vw,19px)] whitespace-nowrap font-extrabold tracking-[-.8px] text-[#332F2C]">
+                {formatMoney(vehicle.monthlyOfficePrice)}
               </strong>
-              <span className="mt-[4px] block text-[10px] font-extrabold text-[#625A55]">
-                {rentalDays} Gün Toplam
+              <span className="mt-[4px] block text-center text-[10px] font-extrabold text-[#625A55]">
+                Kampanyalı Fiyat
               </span>
-              <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
-                {formatMoney(vehicle.officePrice)} / gün
+              <span className="mt-[3px] block text-center text-[9px] font-bold text-[#817974]">
+                1 Ay Kiralama
               </span>
             </div>
+<div className="rounded-[11px] border border-[#70D99C] bg-[#E9F9EF] shadow-[0_3px_12px_rgba(0,160,90,0.10)] px-[8px] py-[14px] text-center"><span className="block text-[8px] font-extrabold uppercase text-[#16803C]">🛡️ Depozito</span><strong className="mt-[5px] block text-[clamp(12px,2.9vw,17px)] whitespace-nowrap font-extrabold text-[#16803C]">{formatMoney(vehicle.deposit)}</strong><span className="mt-[4px] block text-[9px] font-bold text-[#16803C]">İade Edilir</span></div>
           </div>
         ) : (
           <>
@@ -1327,36 +1338,35 @@ function VehicleCard({
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-[9px]">
-              <div className="rounded-[11px] border border-[#F1D5DA] bg-[#FFF0F2] px-[14px] py-[14px]">
-                <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#D71935]">
-                  Hemen Öde
+            <div className="grid grid-cols-3 gap-[6px] [&>div]:min-w-0">
+              <div className="rounded-[11px] border border-[#FF9E87] bg-[#FFF1EC] shadow-[0_3px_12px_rgba(255,100,65,0.10)] px-[8px] py-[12px]">
+                <span className="block text-[8px] font-extrabold uppercase tracking-[.3px] text-[#D71935]">
+                  📋 STANDART AYLIK
                 </span>
-                <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
-                  {formatMoney(vehicle.monthlyOnlinePrice * monthlyCount)}
+                <strong className="mt-[5px] block text-[clamp(13px,3.2vw,19px)] whitespace-nowrap font-extrabold tracking-[-.8px] text-[#332F2C]">
+                  {formatMoney((vehicle.monthlyOnlinePrice / 0.8) * monthlyCount)}
                 </strong>
                 <span className="mt-[4px] block text-[10px] font-extrabold text-[#D71935]">
+                  {monthlyCount} Ay Toplam
+                </span>
+                <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
+                  {formatMoney(vehicle.monthlyOnlinePrice / 0.8)} / ay
+                </span>
+              </div>
+
+              <div className="rounded-[11px] border border-[#89C4FF] bg-[#EDF5FF] shadow-[0_3px_12px_rgba(30,110,240,0.10)] px-[8px] py-[12px]">
+                <span className="block text-center text-[9px] font-extrabold uppercase tracking-[.3px] text-[#1765B1]">AYLIK KAMPANYA</span><span className="mx-auto mt-[5px] block w-fit rounded-full bg-[#ED1739] px-[8px] py-[3px] text-center text-[9px] font-black text-white">%20 İNDİRİM</span>
+                <strong className="mt-[5px] block text-[clamp(13px,3.2vw,19px)] whitespace-nowrap font-extrabold tracking-[-.8px] text-[#332F2C]">
+                  {formatMoney(vehicle.monthlyOnlinePrice * monthlyCount)}
+                </strong>
+                <span className="mt-[4px] block text-[10px] font-extrabold text-[#625A55]">
                   {monthlyCount} Ay Toplam
                 </span>
                 <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
                   {formatMoney(vehicle.monthlyOnlinePrice)} / ay
                 </span>
               </div>
-
-              <div className="rounded-[11px] border border-[#E9E2DD] bg-white px-[14px] py-[14px]">
-                <span className="block text-[8px] font-extrabold uppercase tracking-[1px] text-[#817974]">
-                  Ofiste Öde
-                </span>
-                <strong className="mt-[5px] block text-[23px] font-extrabold tracking-[-.8px] text-[#332F2C]">
-                  {formatMoney(vehicle.monthlyOfficePrice * monthlyCount)}
-                </strong>
-                <span className="mt-[4px] block text-[10px] font-extrabold text-[#625A55]">
-                  {monthlyCount} Ay Toplam
-                </span>
-                <span className="mt-[3px] block text-[9px] font-bold text-[#817974]">
-                  {formatMoney(vehicle.monthlyOfficePrice)} / ay
-                </span>
-              </div>
+<div className="rounded-[11px] border border-[#70D99C] bg-[#E9F9EF] shadow-[0_3px_12px_rgba(0,160,90,0.10)] px-[8px] py-[14px]"><span className="block text-[8px] font-extrabold uppercase text-[#16803C]">🛡️ Depozito</span><strong className="mt-[5px] block text-[clamp(12px,2.9vw,17px)] whitespace-nowrap font-extrabold text-[#16803C]">{formatMoney(vehicle.deposit)}</strong><span className="mt-[4px] block text-[9px] font-bold text-[#16803C]">İade Edilir</span></div>
             </div>
           </>
         )}
@@ -1432,7 +1442,7 @@ function VehicleCard({
         </button>
 
         <a
-          href="tel:08508888098"
+          href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
           className="group flex h-[42px] items-center justify-center gap-[7px] rounded-[8px] bg-[#ED1739] px-[12px] text-[8.5px] font-bold text-white shadow-[0_7px_17px_rgba(237,23,57,.15)] transition hover:bg-[#CE1431]"
         >
           Rezervasyon İçin Ara

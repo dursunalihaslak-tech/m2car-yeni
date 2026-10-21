@@ -94,14 +94,14 @@ export default function Home() {
             <Nav href="/filo-talebi">Filo Talebi</Nav>
             <Nav href="/ek-hizmetler">Ek Hizmetler</Nav>
             <Nav href="/hakkimizda">Hakkımızda</Nav>
-            <Nav href="/iletisim">İletişim</Nav>
+            <a href="https://wa.me/905336027805" target="_blank" rel="noopener noreferrer" aria-label="M2CAR WhatsApp" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-3 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#1DA851]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="h-[17px] w-[17px]" aria-hidden="true"><path d="M16 .8A15.1 15.1 0 0 0 3 23.5L.9 31l7.7-2A15.2 15.2 0 1 0 16 .8Zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.3Zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg><span>WhatsApp</span></a>
           </nav>
 
           <a
-            href="tel:08508888098"
+            href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
             className="ml-auto flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-[11px]"
           >
-            <span className="hidden h-[42px] w-[42px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739] sm:flex">
+            <span className="flex h-[32px] w-[32px] shrink-0 items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739] sm:h-[42px] sm:w-[42px]">
               <PhoneIcon />
             </span>
 
@@ -114,7 +114,6 @@ export default function Home() {
               </span>
             </span>
           </a>
-
           <button
             type="button"
             onClick={() => setMobileMenu(!mobileMenu)}
@@ -136,7 +135,6 @@ export default function Home() {
               <MobileNav href="/filo-talebi">Filo Talebi</MobileNav>
               <MobileNav href="/ek-hizmetler">Ek Hizmetler</MobileNav>
               <MobileNav href="/hakkimizda">Hakkımızda</MobileNav>
-              <MobileNav href="/iletisim">İletişim</MobileNav>
             </div>
           </div>
         )}
@@ -371,9 +369,9 @@ export default function Home() {
 
     <div className="mt-8 grid gap-5 md:grid-cols-3">
       {[
-        { category: "EKONOMİ", model: "Renault Clio", image: "/cars/clio.png", transmission: "Manuel", fuel: "Benzin", price: "1.650" },
-        { category: "KONFOR", model: "Renault Megane", image: "/cars/megane.png", transmission: "Otomatik", fuel: "Benzin", price: "2.549" },
-        { category: "SUV", model: "Peugeot 3008", image: "/cars/3008.png", transmission: "Otomatik", fuel: "Dizel", price: "3.299" }
+        { category: "EKONOMİ", model: "Renault Clio", image: "/cars/clio.png", transmission: "Manuel", fuel: "Benzin", price: "1.459", monthly: "39.900", deposit: "5.000" },
+        { category: "KONFOR", model: "Renault Megane", image: "/cars/megane.png", transmission: "Otomatik", fuel: "Benzin", price: "2.549", monthly: "54.900", deposit: "7.000" },
+        { category: "SUV", model: "Peugeot 3008", image: "/cars/3008.png", transmission: "Otomatik", fuel: "Dizel", price: "3.299", monthly: "69.900", deposit: "10.000" }
       ].map((car) => (
         <article key={car.model} className="group overflow-hidden rounded-[20px] border border-[#EEE8E4] bg-white shadow-[0_10px_35px_rgba(50,38,35,.055)] transition hover:-translate-y-1 hover:shadow-lg">
           <div className="relative flex h-[230px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#F5F3F1] via-white to-[#FCECEF] px-4">
@@ -393,60 +391,33 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="relative mt-3 flex h-[88px] overflow-hidden rounded-[14px] border border-[#FF9B3D] bg-gradient-to-br from-[#FFFCF7] to-[#FFE8CA] shadow-[0_5px_16px_rgba(255,120,0,0.12)]">
-
-  {/* TURUNCU GUNLUK FIYAT ALANI */}
-  <div
-    className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-br from-[#FF9500] via-[#FF7600] to-[#FF4D00]"
-    style={{ clipPath: "polygon(0 0, 100% 0, 87% 100%, 0 100%)" }}
-  />
-
-  {/* GUNLUK FIYAT */}
-  <div className="relative z-10 flex w-1/2 min-w-0 items-center gap-[5px] pl-[8px] pr-[2px] text-white">
-    <span className="flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-full bg-white/20">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.82 0L3 13V3h10l7.59 7.59a2 2 0 0 1 0 2.82Z"/>
-        <circle cx="7.5" cy="7.5" r="1"/>
-      </svg>
-    </span>
-
-    <div className="min-w-0">
-      <div className="whitespace-nowrap text-[10px] font-extrabold leading-[14px] tracking-[-0.2px]">
-        GÜNLÜK FİYAT
-      </div>
-      <div
-        className="mt-[3px] whitespace-nowrap text-[20px] font-black leading-none tracking-[-0.9px] sm:text-[22px]"
-        style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900 }}
-      >
-        {car.price} TL
-      </div>
-    </div>
+            {/* WHATSAPP */}
+<a href={`https://wa.me/905336027805?text=${encodeURIComponent(`Merhaba, ${car.model} ${car.transmission} için kiralama bilgisi almak istiyorum.`)}`} target="_blank" rel="noopener noreferrer" className="h-[52px] min-h-0 w-full box-border min-h-0 w-full box-border mt-4 flex  w-full items-center justify-between gap-2 rounded-[14px] bg-gradient-to-r from-[#08C969] to-[#20B77C] px-3 text-white transition hover:brightness-95">
+  <div className="flex min-w-0 items-center gap-2">
+    <svg viewBox="0 0 32 32" width="23" height="23" fill="currentColor" aria-hidden="true" className="shrink-0"><path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.9 31l7.6-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.4Zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.4 3.6 1.6 3.8c.2.2 2.7 4.1 6.5 5.7.9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg>
+    <div className="min-w-0"><div className="text-[14px] font-black leading-tight">WhatsApp</div><div className="text-[10px] font-semibold">Anında yanıt, hızlı teklif alın</div></div>
   </div>
-
-  {/* DEPOZITO */}
-  <div className="relative z-10 flex w-1/2 min-w-0 items-center gap-[7px] pl-[16px] pr-[5px]">
-    <span className="flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-full bg-white text-[#934B1C] shadow-sm">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
-        <path d="m9 12 2 2 4-4"/>
-      </svg>
-    </span>
-
-    <div className="min-w-0">
-      <div className="whitespace-nowrap text-[10px] font-extrabold leading-[14px] tracking-[-0.2px] text-[#34302D]">
-        DEPOZİTO
-      </div>
-      <div
-        className="mt-[3px] whitespace-nowrap text-[22px] font-black leading-none tracking-[-0.9px] text-[#171B24] sm:text-[25px]"
-        style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900 }}
-      >
-        {car.model.includes("Clio") ? "5.000 TL" : "7.000 TL"}
-      </div>
-    </div>
+  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[18px] font-bold text-[#0AAE65]">›</span>
+</a>
+<a href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }} className="h-[48px] min-h-0 w-full box-border py-0 min-h-0 w-full box-border min-h-0 w-full box-border  min-h-0 w-full box-border mt-2 flex  w-full items-center justify-center gap-3 rounded-[13px] border-2 border-[#E90035] bg-white text-[14px] font-black text-[#E90035] transition hover:bg-[#FFF1F4]"><PhoneIcon />Bizi Arayın</a>
+<div className="mt-4 grid grid-cols-3 items-stretch gap-[7px]">
+  <div className="min-w-0 rounded-[12px] border border-[#FFAD96] bg-[#FFF3EE] flex min-h-[97px] flex-col items-center px-[8px] py-[7px] text-center">
+    <div className="text-[9px] font-extrabold leading-[1.5] text-[#D93420]">☀️ GÜNLÜK<br/>KİRALAMA</div>
+    <div className="mt-auto pt-[8px] whitespace-nowrap text-[clamp(14px,3vw,20px)] font-black tracking-[-0.5px] text-[#332F2C] relative -top-[8px]">{car.price} TL</div>
+    <div className="mt-[6px] text-[9px] font-bold text-[#D93420]">Günlük fiyat</div>
   </div>
-
+  <div className="min-w-0 rounded-[12px] border border-[#89C4FF] bg-[#EDF5FF] flex min-h-[97px] flex-col items-center px-[8px] py-[7px] text-center">
+    <div className="text-[9px] font-extrabold leading-[1.5] text-[#1558B7]">📅 AYLIK<br/>KAMPANYA</div>
+    <div className="mt-auto pt-[8px] whitespace-nowrap text-[clamp(14px,3vw,20px)] font-black tracking-[-0.5px] text-[#332F2C] relative -top-[8px]">{car.monthly} TL</div>
+    <div className="mt-[6px] text-[9px] font-bold text-[#1558B7]">Aylık fiyat</div>
+  </div>
+  <div className="min-w-0 rounded-[12px] border border-[#70D99C] bg-[#E9F9EF] flex min-h-[97px] flex-col items-center px-[8px] py-[7px] text-center">
+    <div className="text-[9px] font-extrabold leading-[1.5] text-[#008B4A]">🛡️ DEPOZİTO</div>
+    <div className="mt-auto pt-[8px] whitespace-nowrap text-[clamp(14px,3vw,20px)] font-black tracking-[-0.5px] text-[#008B4A] relative -top-[8px]">{car.deposit} TL</div>
+    <div className="mt-[6px] text-[9px] font-bold text-[#008B4A]">İade edilir</div>
+  </div>
 </div>
-<div className="mt-[9px] grid grid-cols-2 gap-[9px]"><a href="tel:08508888098" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#E90035] px-2 text-[14px] font-black text-white transition hover:bg-[#C9002D]"><PhoneIcon />Hemen Ara</a><a href={`https://wa.me/905336027805?text=${encodeURIComponent(`Merhaba, ${car.model} ${car.transmission} için kiralama bilgisi almak istiyorum.`)}`} target="_blank" rel="noopener noreferrer" className="flex h-[46px] items-center justify-center gap-[7px] rounded-[9px] bg-[#0BBE61] px-2 text-[14px] font-black text-white transition hover:bg-[#08A651]"><svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true" className="shrink-0"><path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.9 31l7.6-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.4Zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.4 3.6 1.6 3.8c.2.2 2.7 4.1 6.5 5.7.9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg><span>WhatsApp</span></a></div><a href="/araclarimiz" className="mt-3 flex items-center justify-center gap-2 text-[10px] font-extrabold text-[#514A46] hover:text-[#ED1739]">
+<a href="/araclarimiz" className="mt-3 flex items-center justify-center gap-2 text-[10px] font-extrabold text-[#514A46] hover:text-[#ED1739]">
               Detayları İncele <ArrowIcon />
             </a>
           </div>
@@ -658,11 +629,11 @@ export default function Home() {
               {/* SABIT ILETISIM BUTONLARI */}
         <div className="pointer-events-none fixed inset-x-0 bottom-[max(16px,env(safe-area-inset-bottom))] z-[60] flex items-end justify-between px-4 lg:hidden">
           <a
-            href="tel:08508888098"
+            href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
             aria-label="Bizi Arayın - 0850 888 80 98"
             className="pointer-events-auto flex flex-col items-center gap-1"
           >
-            <span className="flex h-[56px] w-[56px] items-center justify-center rounded-[17px] bg-[#ED1739] text-white shadow-lg">
+            <span className="flex h-[56px] w-[56px] items-center justify-center rounded-[17px] bg-[#ED1739] text-white shadow-[0_6px_20px_rgba(37,211,102,0.35)]">
               <PhoneIcon />
             </span>
             <span className="rounded-full bg-[#332F2C] px-2 py-1 text-[10px] font-bold text-white">
@@ -676,11 +647,8 @@ export default function Home() {
             aria-label="WhatsApp ile iletişim"
             className="pointer-events-auto flex flex-col items-center gap-1"
           >
-            <span className="flex h-[56px] w-[56px] items-center justify-center rounded-[17px] bg-[#20C765] text-white shadow-lg">
-              <svg width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>
-                <path d="M9 9c.5 3 2 4.5 5 5l1.5-1.5 2 1c-.5 2-1.5 3-3.5 3-4 0-7.5-3.5-7.5-7.5 0-2 1-3 3-3l1 2L9 9Z"/>
-              </svg>
+            <span className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.9 31l7.6-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5A12.4 12.4 0 1 1 16 28.4Zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-1 1.2-1.4 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.4 3.6 1.6 3.8c.2.2 2.7 4.1 6.5 5.7.9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5Z"/></svg>
             </span>
             <span className="rounded-full bg-[#332F2C] px-2 py-1 text-[10px] font-bold text-white">
               WhatsApp
@@ -700,7 +668,7 @@ export default function Home() {
               </p>
 
               <a
-                href="tel:08508888098"
+                href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
                 className="mt-[25px] inline-flex items-center gap-[13px]"
               >
                 <span className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
@@ -807,8 +775,8 @@ export default function Home() {
         .nav-link {
           position: relative;
           color: #3d3835;
-          font-size: 14px;
-          font-weight: 800;
+          font-size: 15px;
+          font-weight: 900;
           line-height: 1;
           letter-spacing: -0.3px;
           white-space: nowrap;
@@ -909,7 +877,7 @@ function Nav({
   active?: boolean;
 }) {
   return (
-    <a href={href} className={`nav-link ${active ? "active" : ""}`}>
+    <a href={href} className={`nav-link !font-black ${active ? "active" : ""}`}>
       {children}
     </a>
   );
@@ -969,7 +937,7 @@ function HeroBenefit({ text }: { text: string }) {
         <CheckIcon />
       </span>
 
-      <span className="text-[10px] font-bold text-[#766E69]">{text}</span>
+      <span className="text-[10px] font-black text-[#766E69]">{text}</span>
     </div>
   );
 }

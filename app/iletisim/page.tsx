@@ -1,5 +1,7 @@
 "use client";
 
+
+import { FaWhatsapp } from 'react-icons/fa';
 import { Manrope } from "next/font/google";
 import { FormEvent, useState } from "react";
 
@@ -63,7 +65,9 @@ export default function IletisimPage() {
       className={`${manrope.className} min-h-screen bg-white text-[#332F2C]`}
     >
       {/* HEADER */}
-      <header className="relative z-50 border-b border-[#EEE8E3] border-t-[2px] border-t-[#ED1739] bg-white">
+      {/* M2CAR-SABIT-MENU-BOSLUK */}
+      <div className="h-[76px]" aria-hidden="true" />
+      <header className="fixed top-0 inset-x-0 z-50 border-b border-[#EEE8E3] border-t-[2px] border-t-[#ED1739] bg-white">
         <div className="mx-auto flex h-[96px] max-w-[1340px] items-center px-5 sm:px-6">
           {/* LOGO */}
           <a
@@ -101,7 +105,7 @@ export default function IletisimPage() {
 
           {/* REZERVASYON HATTI */}
           <a
-            href="tel:08508888098"
+            href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
             className="ml-auto hidden items-center gap-[11px] xl:flex"
           >
             <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#FFF0F2] text-[#ED1739]">
@@ -120,11 +124,20 @@ export default function IletisimPage() {
           </a>
 
           {/* MOBİL MENÜ */}
+          <a
+  href="https://wa.me/905336027805"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="M2CAR WhatsApp Mobil Ust"
+  className="ml-auto mr-3 flex h-[42px] px-3 shrink-0 items-center justify-center rounded-[10px] bg-[#25D366] text-white shadow-sm transition-colors hover:bg-[#1DA851] lg:hidden"
+>
+  <FaWhatsapp className="h-[24px] w-[24px]" />
+<span className="ml-2 text-[12px] font-semibold">WhatsApp</span></a>
           <button
             type="button"
             onClick={() => setMobileMenu(!mobileMenu)}
             aria-label="Menü"
-            className="ml-auto flex h-[42px] w-[42px] items-center justify-center rounded-[9px] border border-[#E9E2DD] bg-white text-[#514A46] lg:hidden"
+            className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[9px] border border-[#E9E2DD] bg-white text-[#514A46] lg:hidden"
           >
             <MenuIcon />
           </button>
@@ -140,7 +153,6 @@ export default function IletisimPage() {
               <MobileNav href="/filo-talebi">Filo Talebi</MobileNav>
               <MobileNav href="/ek-hizmetler">Ek Hizmetler</MobileNav>
               <MobileNav href="/hakkimizda">Hakkımızda</MobileNav>
-              <MobileNav href="/iletisim">İletişim</MobileNav>
             </div>
           </div>
         )}
@@ -167,7 +179,7 @@ export default function IletisimPage() {
           <div className="grid gap-[12px] md:grid-cols-3">
             {/* TELEFON */}
             <a
-              href="tel:08508888098"
+              href="tel:08508888098" onClick={() => { if (typeof window !== "undefined" && typeof (window as any).gtag === "function") { (window as any).gtag("event", "conversion", { send_to: "AW-18455145510/3oVLCMjp6ZwdEKbYjOBE", value: 1.0, currency: "TRY" }); } }}
               className="group flex items-center gap-[14px] rounded-[14px] border border-[#EAE3DE] bg-white p-[18px] transition hover:border-[#F1CDD3] hover:shadow-[0_10px_25px_rgba(73,54,45,.05)]"
             >
               <div className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFF0F2] text-[#ED1739] transition group-hover:bg-[#ED1739] group-hover:text-white">
@@ -420,8 +432,8 @@ export default function IletisimPage() {
         .nav-link {
           position: relative;
           color: #514a46;
-          font-size: 12px;
-          font-weight: 700;
+          font-size: 15px;
+          font-weight: 900;
           letter-spacing: -0.15px;
           white-space: nowrap;
           transition: color 180ms ease;
@@ -494,7 +506,7 @@ function Nav({
   active?: boolean;
 }) {
   return (
-    <a href={href} className={`nav-link ${active ? "active" : ""}`}>
+    <a href={href} className={`nav-link !font-black ${active ? "active" : ""}`}>
       {children}
     </a>
   );
@@ -510,7 +522,7 @@ function MobileNav({
   return (
     <a
       href={href}
-      className="border-b border-[#F1ECE8] pb-3 text-[12px] font-bold text-[#514A46]"
+      className="border-b border-[#F1ECE8] pb-3 text-[12px] font-black text-[#514A46]"
     >
       {children}
     </a>
